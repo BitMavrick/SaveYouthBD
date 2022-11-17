@@ -2,9 +2,11 @@
 
     <x-partials.navbar />
 
-    <x-partials.login_modal />
+
 
     <main>
+        <x-partials.login_modal />
+        <x-partials.register_modal />
         <!--? slider Area Start-->
         <div class="slider-area position-relative">
             <div class="slider-active">

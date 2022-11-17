@@ -39,12 +39,15 @@
                                                 <li><a href="elements.html">Element</a></li>
                                             </ul>
                                         </li>
-                                        <li><a href="#">Log In</a></li>
+                                        <li><a href="#" data-toggle="modal" data-target="#loginModal">Log In</a>
+                                        </li>
                                     </ul>
                                 </nav>
                             </div>
+
                             <div class="header-right-btn f-right d-none d-lg-block ml-30">
-                                <a href="#" class="btn header-btn">Register</a>
+                                <a href="#" class="btn header-btn" data-toggle="modal"
+                                    data-target="#registerModal">Register</a>
                             </div>
                         </div>
                     </div>
