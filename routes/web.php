@@ -1,17 +1,19 @@
 <?php
 
-use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\DoctorController;
 
 
 Route::get('/', function () {
     return view('index');
 });
 
-Route::get('doc/{id}/home', function () {
+Route::get('doc/home', [DoctorController::class, 'home'])->name('doc.home');
+
+Route::get('staff/{id}/home', function () {
     return view('index-doctor');
-})->name('doctor-home');
+})->name('staff-home');
 
 Route::get('/dashboard', function () {
     return view('dashboard');
