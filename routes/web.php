@@ -13,7 +13,7 @@ Route::get('doc/home', [DoctorController::class, 'home'])->name('doc.home');
 
 Route::get('staff/{id}/home', function () {
     return view('index-doctor');
-})->name('staff-home');
+})->name('staff.home');
 
 Route::get('/dashboard', function () {
     return view('dashboard');

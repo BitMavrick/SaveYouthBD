@@ -49,6 +49,12 @@ class RegisteredUserController extends Controller
 
         Auth::login($user);
 
-        return redirect(RouteServiceProvider::HOME);
+        if (isset(Auth::user()->role) and Auth::user()->role == 'doctor') {
+            return redirect()->route('doc.home');
+        } elseif (isset(Auth::user()->role) and Auth::user()->role == 'staff') {
+            return redirect()->route('staff.home');
+        } elseif (isset(Auth::user()->role) and Auth::user()->role == 'patient') {
+            return redirect()->route('home');
+        }
     }
 }
