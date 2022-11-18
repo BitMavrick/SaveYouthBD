@@ -13,9 +13,9 @@ class DoctorController extends Controller
         if (isset(Auth::user()->role) and Auth::user()->role == 'doctor') {
             return view('index-doctor');
         } elseif (isset(Auth::user()->role) and Auth::user()->role == 'staff') {
-            return redirect('/staff/home');
-        } else {
-            return redirect('/');
+            return redirect()->route('staff.home');
+        } elseif (isset(Auth::user()->role) and Auth::user()->role == 'staff') {
+            return redirect()->route('home');
         }
     }
 }

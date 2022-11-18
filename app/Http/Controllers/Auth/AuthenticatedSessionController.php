@@ -33,11 +33,11 @@ class AuthenticatedSessionController extends Controller
         $request->session()->regenerate();
 
         if (Auth::user()->role == 'doctor') {
-            return redirect('/doc/home');
+            return redirect()->route('doc.home');
         } elseif (Auth::user()->role == 'staff') {
-            return redirect('/staff/home');
-        } else {
-            return redirect('/');
+            return redirect()->route('staff.home');
+        } elseif (Auth::user()->role == 'patient') {
+            return redirect()->route('home');
         }
 
         return redirect();
