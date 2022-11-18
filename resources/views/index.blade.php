@@ -1,6 +1,8 @@
 <x-master>
     <x-partials.navbar />
 
+    <x-partials.Modals />
+
     <!-- Slider Start -->
     <section class="slider">
         <div class="container">

@@ -110,12 +110,14 @@
                                     </ul>
                                 </li>
                                 <li class="nav-item @@contact">
-                                    <a class="nav-link" href="contact.html">Contact</a>
+                                    <a class="nav-link" href="#" data-toggle="modal"
+                                        data-target="#modal-login">Login</a>
                                 </li>
                             </ul>
 
                             <div class="my-2 my-md-0 ml-lg-4 text-center">
-                                <a href="contact.html" class="btn btn-solid-border btn-round-full">Get a Quote</a>
+                                <a href="#" class="btn btn-solid-border btn-round-full" data-toggle="modal"
+                                    data-target="#modal-register">Register Now</a>
                             </div>
                         </div>
                     </nav>
