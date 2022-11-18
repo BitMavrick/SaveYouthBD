@@ -1,0 +1,29 @@
+## SaveYouthBD
+
+1. Patient
+
+-   Can create account
+-   Guest Mode
+-   Find Doctors
+-   Can send emergency message/calling staff
+-   Request for ambulance
+-   Update or modified own account
+-   Can make appointment
+-   Can see rehave centre
+
+2. Staff
+
+-   Reeceived emergency messages for calling/message/ambulance
+-   Staff can set appointment with patinet and doctors
+-   appointemnt will be verified after payment clearance (less important)
+-   Update or modified own account
+-   Staff can send and receive message from doctor
+
+3. Doctor (JR, SR)
+
+-   receive/send message/call from staff
+-   own account modification
+-   join video with patient with google meet
+-   update appointemnt
+
+4. Super admin (less important)
