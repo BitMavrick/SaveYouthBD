@@ -25,6 +25,12 @@
     <link rel="stylesheet" href="assets/css/nice-select.css">
     <link rel="stylesheet" href="assets/css/style.css">
 
+    <style>
+    body {
+        font-size: large !important;
+    }
+    </style>
+
 </head>
 
 <body>
