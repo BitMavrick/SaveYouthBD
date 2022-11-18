@@ -49,35 +49,38 @@
                 </button>
             </div>
             <div class="modal-body">
-                <form>
+                <form action="{{route('make')}}" method="POST">
+                    @csrf
                     <div class="form-group">
                         <label for="name">Name</label>
-                        <input type="text" class="form-control" id="name" aria-describedby="emailHelp"
+                        <input type="text" name="name" class="form-control" id="name" aria-describedby="emailHelp"
                             placeholder="Enter your name">
 
                     </div>
                     <div class="form-group">
                         <label for="exampleInputEmail1">Email address</label>
-                        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
-                            placeholder="Enter email">
+                        <input type="email" name="email" class="form-control" id="exampleInputEmail1"
+                            aria-describedby="emailHelp" placeholder="Enter email">
                         <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone
                             else.</small>
                     </div>
 
-                    <select class="form-control form-group">
-                        <option selected>I'm a patient</option>
-                        <option>I'm a Doctor</option>
-                        <option>I'm a Staff</option>
+                    <select class="form-control form-group" name="role">
+                        <option selected value="patient">I'm a patient</option>
+                        <option value="doctor">I'm a Doctor</option>
+                        <option value="staff">I'm a Staff</option>
                     </select>
 
 
                     <div class="form-group">
                         <label for="exampleInputPassword1">Password</label>
-                        <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+                        <input type="password" name="pass1" class="form-control" id="exampleInputPassword1"
+                            placeholder="Password">
                     </div>
                     <div class="form-group">
                         <label for="exampleInputPassword2">Re-enter Password</label>
-                        <input type="password" class="form-control" id="exampleInputPassword2" placeholder="Password">
+                        <input type="password" name="pass2" class="form-control" id="exampleInputPassword2"
+                            placeholder="Password">
                     </div>
                     <div class="form-check">
                         <input type="checkbox" class="form-check-input" id="exampleCheck1">
