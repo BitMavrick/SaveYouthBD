@@ -29,6 +29,7 @@
                                         <div class="user-profile-name">
                                             <h1>Welcome</h1>
                                             <h2>Dr. {{ Auth::user()->name }}</h2>
+                                            <h2>{{ $profile_data->gender }}</h2>
                                         </div>
 
                                         <div class="user-job-title">
