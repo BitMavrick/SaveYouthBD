@@ -111,7 +111,8 @@
                                 </li>
 
                                 <li class="nav-item @@project">
-                                    <a class="nav-link" data-toggle="modal" data-target="#modal-update-doctor">Edit
+                                    <a class="nav-link" data-toggle="modal" href="#"
+                                        data-target="#modal-update-doctor">Edit
                                         Profile</a>
                                 </li>
 

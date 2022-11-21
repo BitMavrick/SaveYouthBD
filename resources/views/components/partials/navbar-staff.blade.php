@@ -103,11 +103,17 @@
                                                     <a class="dropdown-item" href="index.html">Submenu 01</a>
                                                 </li>
                                                 <li>
-                                                    <a class="dropdown-item" href="index.html">Submenu 02</a>
+                                                    <a class="dropdown-item">Submenu 02</a>
                                                 </li>
                                             </ul>
                                         </li>
                                     </ul>
+                                </li>
+
+                                <li class="nav-item @@project">
+                                    <a class="nav-link" href="#" data-toggle="modal"
+                                        data-target="#modal-update-staff">Edit
+                                        Profile</a>
                                 </li>
 
                             </ul>
