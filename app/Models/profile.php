@@ -15,11 +15,12 @@ class profile extends Model
         'gender',
         'phone',
         'email',
+        'experties',
         'address',
         'website',
         'working_organization',
         'date_of_birth',
         'educational_qualification',
-        'desctiption',
+        'description',
     ];
 }

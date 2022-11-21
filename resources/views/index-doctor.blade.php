@@ -20,8 +20,19 @@
                                             <img class="img-fluid" src="/images/doctor-female.jpg" alt="" />
                                             @endif
                                         </div>
+
+                                        <div class="user-work">
+                                            <h4 class="mt-2">Working on:</h4>
+                                            <div class="work-content">
+                                                <h3> {{ $profile_data->working_organization }} </h3>
+                                            </div>
+                                        </div>
+
+
+
                                     </div>
                                     @endif
+
                                     <div class="col-lg-8">
                                         <div class="user-profile-name">
                                             <h1>Welcome,</h1>
@@ -30,7 +41,7 @@
 
                                         <div class="user-job-title">
                                             @if($profile_data->experties)
-                                            <h5> - {{ $profile_data->experties }}</h5>
+                                            <h5> - {{ $profile_data->experties }} expert</h5>
                                             @endif
                                         </div>
                                         @if($profile_data->address)
@@ -71,8 +82,7 @@
                                                         @if($profile_data->address)
                                                         <div class="address-content">
                                                             <span class="contact-title">Address:</span>
-                                                            <span class="mail-address">123, Rajar Goli, South
-                                                                Mugda</span>
+                                                            <span class="mail-address">{{$profile_data->address}}</span>
                                                         </div>
                                                         @endif
                                                         @if($profile_data->email)
@@ -85,7 +95,8 @@
                                                         @if($profile_data->website)
                                                         <div class="website-content">
                                                             <span class="contact-title">Website:</span>
-                                                            <span class="contact-website">www.Admin Board.com</span>
+                                                            <span
+                                                                class="contact-website">{{$profile_data->website}}</span>
                                                         </div>
                                                         @endif
 
@@ -96,7 +107,8 @@
                                                         @if($profile_data->date_of_birth)
                                                         <div class="birthday-content">
                                                             <span class="contact-title">Birthday:</span>
-                                                            <span class="birth-date">January 31, 1990 </span>
+                                                            <span class="birth-date">{{$profile_data->date_of_birth}}
+                                                            </span>
                                                         </div>
                                                         @endif
                                                         @if($profile_data->gender)

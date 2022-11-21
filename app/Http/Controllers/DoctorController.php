@@ -33,7 +33,18 @@ class DoctorController extends Controller
         $user->save();
 
         $profile = profile::where('id', Auth::user()->id)->first();
+
         $profile->email = $request->email;
+        $profile->phone = $request->phone;
+        $profile->gender = $request->gender;
+        $profile->address = $request->address;
+        $profile->date_of_birth = $request->date_of_birth;
+        $profile->educational_qualification = $request->educational_qualification;
+        $profile->experties = $request->experties;
+        $profile->working_organization = $request->working_organization;
+        $profile->website = $request->website;
+        $profile->description = $request->description;
+
         $profile->save();
 
         return redirect()->route('doc.home');

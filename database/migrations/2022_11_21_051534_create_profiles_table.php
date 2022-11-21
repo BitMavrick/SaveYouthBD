@@ -24,7 +24,7 @@ return new class extends Migration
             $table->date('date_of_birth')->nullable();
             $table->string('educational_qualification')->nullable();
             $table->string('experties')->nullable();
-            $table->longText('desctiption')->nullable();
+            $table->longText('description')->nullable();
             $table->timestamps();
 
             $table->foreign('id')->references('id')->on('users')->onDelete('cascade');
