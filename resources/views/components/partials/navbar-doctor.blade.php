@@ -93,7 +93,6 @@
                                         data-target="#modal-update-doctor">Edit
                                         Profile</a>
                                 </li>
-
                             </ul>
 
                             <form action="{{route('logout')}}" method="POST">
