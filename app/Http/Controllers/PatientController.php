@@ -15,6 +15,8 @@ class PatientController extends Controller
             return redirect()->route('staff.home');
         } elseif (isset(Auth::user()->role) and Auth::user()->role == 'patient') {
             return view('index-patient');
+        } else {
+            return redirect()->route('welcome');
         }
     }
 }

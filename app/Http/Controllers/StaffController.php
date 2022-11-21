@@ -15,6 +15,8 @@ class StaffController extends Controller
             return view('index-staff');
         } elseif (isset(Auth::user()->role) and Auth::user()->role == 'patient') {
             return redirect()->route('home');
+        } else {
+            return redirect()->route('welcome');
         }
     }
 }

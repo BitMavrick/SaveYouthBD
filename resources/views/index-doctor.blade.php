@@ -20,32 +20,9 @@
                                                 <p>123, South Mugda</p>
                                                 <p>New York, 1214</p>
                                             </div>
-                                            <div class="work-content">
-                                                <h3>Unix</h3>
-                                                <p>123, South Mugda</p>
-                                                <p>New York, 1214</p>
-                                            </div>
+
                                         </div>
-                                        <div class="user-skill">
-                                            <h4>Skill</h4>
-                                            <ul>
-                                                <li>
-                                                    <a href="#">Branding</a>
-                                                </li>
-                                                <li>
-                                                    <a href="#">UI/UX</a>
-                                                </li>
-                                                <li>
-                                                    <a href="#">Web Design</a>
-                                                </li>
-                                                <li>
-                                                    <a href="#">Wordpress</a>
-                                                </li>
-                                                <li>
-                                                    <a href="#">Magento</a>
-                                                </li>
-                                            </ul>
-                                        </div>
+
                                     </div>
                                     <div class="col-lg-8">
                                         <div class="user-profile-name">
@@ -127,11 +104,11 @@
                 </div>
             </div>
             <!-- /# row -->
-            <div class="row">
-                <div class="col-lg-6">
-                    <div class="card">
+            <div class="row mt-4">
+                <div class="col-lg-12">
+                    <div class="card p-4">
                         <div class="card-title">
-                            <h4>Recent Project </h4>
+                            <h4>Upcoming Schedule </h4>
 
                         </div>
                         <div class="card-body">
@@ -200,107 +177,8 @@
                         </div>
                     </div>
                 </div>
-                <!-- /# column -->
-                <div class="col-lg-6">
-                    <div class="card">
-                        <div class="card-title">
-                            <h4>Recent Comments </h4>
+            </div>
 
-                        </div>
-                        <div class="recent-comment">
-                            <div class="media">
-                                <div class="media-left">
-                                    <a href="#">
-                                        <img class="media-object" src="images/avatar/1.jpg" alt="...">
-                                    </a>
-                                </div>
-                                <div class="media-body">
-                                    <h4 class="media-heading">john doe</h4>
-                                    <p>Cras sit amet nibh libero, in gravida nulla. </p>
-                                    <div class="comment-action">
-                                        <div class="badge badge-success">Approved</div>
-                                        <span class="m-l-10">
-                                            <a href="#">
-                                                <i class="ti-check color-success"></i>
-                                            </a>
-                                            <a href="#">
-                                                <i class="ti-close color-danger"></i>
-                                            </a>
-                                            <a href="#">
-                                                <i class="fa fa-reply color-primary"></i>
-                                            </a>
-                                        </span>
-                                    </div>
-                                    <p class="comment-date">October 21, 2017</p>
-                                </div>
-                            </div>
-                            <div class="media">
-                                <div class="media-left">
-                                    <a href="#">
-                                        <img class="media-object" src="images/avatar/2.jpg" alt="...">
-                                    </a>
-                                </div>
-                                <div class="media-body">
-                                    <h4 class="media-heading">Mr. John</h4>
-                                    <p>Cras sit amet nibh libero, in gravida nulla. </p>
-                                    <div class="comment-action">
-                                        <div class="badge badge-warning">Pending</div>
-                                        <span class="m-l-10">
-                                            <a href="#">
-                                                <i class="ti-check color-success"></i>
-                                            </a>
-                                            <a href="#">
-                                                <i class="ti-close color-danger"></i>
-                                            </a>
-                                            <a href="#">
-                                                <i class="fa fa-reply color-primary"></i>
-                                            </a>
-                                        </span>
-                                    </div>
-                                    <p class="comment-date">October 21, 2017</p>
-                                </div>
-                            </div>
-                            <div class="media no-border">
-                                <div class="media-left">
-                                    <a href="#">
-                                        <img class="media-object" src="images/avatar/3.jpg" alt="...">
-                                    </a>
-                                </div>
-                                <div class="media-body">
-                                    <h4 class="media-heading">Mr. John</h4>
-                                    <p>Cras sit amet nibh libero, in gravida nulla. </p>
-                                    <div class="comment-action">
-                                        <div class="badge badge-danger">Rejected</div>
-                                        <span class="m-l-10">
-                                            <a href="#">
-                                                <i class="ti-check color-success"></i>
-                                            </a>
-                                            <a href="#">
-                                                <i class="ti-close color-danger"></i>
-                                            </a>
-                                            <a href="#">
-                                                <i class="fa fa-reply color-primary"></i>
-                                            </a>
-                                        </span>
-                                    </div>
-                                    <div class="comment-date">October 21, 2017</div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- /# card -->
-                </div>
-                <!-- /# column -->
-            </div>
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="footer">
-                        <p>2018 © Admin Board. -
-                            <a href="#">example.com</a>
-                        </p>
-                    </div>
-                </div>
-            </div>
         </section>
     </div>
 
