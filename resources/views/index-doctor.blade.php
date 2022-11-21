@@ -19,6 +19,7 @@
                                                 <h3>It Solution </h3>
                                                 <p>123, South Mugda</p>
                                                 <p>New York, 1214</p>
+                                                <p><button type="submit" class="btn btn-solid-border ">Edit</button></p>
                                             </div>
 
                                         </div>
@@ -104,6 +105,17 @@
                 </div>
             </div>
             <!-- /# row -->
+            <div class="row my-4">
+                <div class="col-lg-12">
+                    <div class="card p-4">
+                        <h5 class="text-center">Please complete your profile before start you journey. Good luck!</h5>
+                        <br>
+                        <p class="text-center"><button type="submit"
+                                class="btn btn-solid-border btn-round-full">Complete Profile</button></p>
+                    </div>
+                </div>
+            </div>
+
             <div class="row mt-4">
                 <div class="col-lg-12">
                     <div class="card p-4">
