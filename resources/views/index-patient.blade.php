@@ -1,5 +1,30 @@
 <x-master>
     <x-partials.navbar />
-    <h1> Welcome, Patient {{ Auth::user()->name }} </h1>
+
+    <div class="container">
+
+        <h3 class="mt-4">Available Doctor</h3>
+        <hr>
+
+        <div class="row">
+
+            <div class="col-3 my-3">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Special title treatment</h5>
+                        <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                        <a href="#" class="btn btn-primary">Go somewhere</a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+
+
+    </div>
+
+
+
     <x-partials.footer />
 </x-master>
