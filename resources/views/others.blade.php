@@ -110,8 +110,7 @@
                     <div class="card p-4">
                         <h5 class="text-center">Please complete your profile before start you journey. Good luck!</h5>
                         <br>
-                        <p class="text-center"><button type="submit"
-                                class="btn btn-solid-border btn-round-full">Complete Profile</button></p>
+                        <p class="text-center"><button type="submit" class="btn btn-solid-border btn-round-full">Complete Profile</button></p>
                     </div>
                 </div>
             </div>
