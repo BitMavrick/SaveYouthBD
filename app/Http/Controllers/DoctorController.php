@@ -25,4 +25,17 @@ class DoctorController extends Controller
             return redirect()->route('welcome');
         }
     }
+
+    public function update(Request $request)
+    {
+        $user = User::where('id', Auth::user()->id)->first();
+        $user->name = $request->name;
+        $user->save();
+
+        $profile = profile::where('id', Auth::user()->id)->first();
+        $profile->email = $request->email;
+        $profile->save();
+
+        return redirect()->route('doc.home');
+    }
 }
