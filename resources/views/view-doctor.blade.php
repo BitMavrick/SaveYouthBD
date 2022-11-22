@@ -154,23 +154,22 @@
                                     </div>
                                 </div>
                             </div>
-                            <button type="submit" class="btn btn-primary float-right" data-bs-toggle="tooltip"
-                                data-bs-placement="top" title="Doctor active now">
-                                Create Appointment
-                            </button>
-
-                            <button type="submit" class="btn btn-info float-right" data-bs-toggle="tooltip"
-                                data-bs-placement="top" title="Doctor active now">
-                                Go Homepage
-                            </button>
+                            <a href="#">
+                                <button class="btn btn-primary float-right" data-bs-toggle="tooltip"
+                                    data-bs-placement="top" title="Doctor active now">
+                                    Create Appointment
+                                </button>
+                            </a>
+                            <a href="#">
+                                <button class="btn btn-info float-right" data-bs-toggle="tooltip"
+                                    data-bs-placement="top" title="Doctor active now">
+                                    Go Homepage
+                                </button>
+                            </a>
                         </div>
-
                     </div>
-
                 </div>
-
             </div>
-
         </section>
     </div>
 
