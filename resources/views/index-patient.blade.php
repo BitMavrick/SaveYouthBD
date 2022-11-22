@@ -38,9 +38,8 @@
             @foreach($doctors as $doctor)
             @foreach($profiles as $profile)
             @if($profile->id == $doctor->id)
-
-            @if($profile[$doctor->id-1]->experties and $profile[$doctor->id-1]->description and
-            $profile[$doctor->id-1]->gender)
+            @if($profile->experties and $profile->description and
+            $profile->gender)
 
             <div class="col-3 my-3">
                 <div class="card">
@@ -56,7 +55,6 @@
             </div>
 
             @endif
-
             @endif
             @endforeach
             @endforeach
