@@ -44,7 +44,19 @@
 
                                     <div class="col-lg-8">
                                         <div class="user-profile-name">
+                                            <p class="float-right">
+
+
+                                                <button type="submit" class="btn btn-solid-border " data-toggle="modal"
+                                                    data-target="#modal-update-doctor">Set as active
+                                                </button>
+
+
+
+
+                                            </p>
                                             <h1>Welcome,</h1>
+
                                             <h2>Dr. {{ Auth::user()->name }}</h2>
                                         </div>
 
