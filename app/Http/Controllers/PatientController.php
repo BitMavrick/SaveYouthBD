@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 
 use App\Models\User;
 use App\Models\Profile;
+use App\Models\Schedule;
 
 class PatientController extends Controller
 {
@@ -50,5 +51,20 @@ class PatientController extends Controller
         View()->share('user', $user);
 
         return view('profile');
+    }
+
+    public function new_schedule(Request $request)
+    {
+        dd(request()->all());
+
+        $schedule = new Schedule;
+        $schedule->patient_id = Auth::user()->id;
+        $schedule->doctor_id = $request->doctor_id;
+        $schedule->date = $request->date;
+        $schedule->time = $request->time;
+        $schedule->status = 'pending';
+        $schedule->save();
+
+        return redirect()->route('home')->with('success', 'Schedule has been created');
     }
 }

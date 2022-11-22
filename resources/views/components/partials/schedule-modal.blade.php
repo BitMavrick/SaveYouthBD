@@ -10,13 +10,18 @@
                 </button>
             </div>
             <div class="modal-body">
-                <form>
+                <form action="{{ route('new.schedule') }}" method="POST">
+                    @csrf
                     <div class="form-group">
                         <label for="subject">Subject</label>
-                        <input required type="text" class="form-control" id="subject" aria-describedby="emailHelp"
-                            placeholder="Enter the topic for set schedule">
+                        <input required name="subject" type="text" class="form-control" id="subject"
+                            aria-describedby="emailHelp" placeholder="Enter the topic for set schedule">
 
                     </div>
+
+                    <input type="text" hidden name="doctor_id" value="{{ $user->id }}">
+
+                    <input type="text" hidden name="patient_id" value="{{ Auth::user()->id }}">
 
                     <div class="form-group">
                         <label for="doctor">Doctor</label>
@@ -28,19 +33,19 @@
 
                     <div class="form-group">
                         <label for="patient">Patient Name</label>
-                        <input type="text" class="form-control" id="patient" aria-describedby="emailHelp"
-                            placeholder="Enter the name of the patient">
+                        <input type="text" name="patient_name" class="form-control" id="patient"
+                            aria-describedby="emailHelp" placeholder="Enter the name of the patient">
                     </div>
 
                     <div class="form-group">
                         <label for="age">Patient age</label>
-                        <input type="text" class="form-control" id="age" aria-describedby="emailHelp"
+                        <input type="text" name="patient_age" class="form-control" id="age" aria-describedby="emailHelp"
                             placeholder="Enter the age of the patient">
                     </div>
 
                     <div class="form-group">
                         <label for="gender">Gender</label>
-                        <select name="gender" class="form-control form-group">
+                        <select name="patient_gender" class="form-control form-group">
                             <option selected disabled>Select gender</option>
                             <option value="male">Male</option>
                             <option value="female">Female
@@ -50,8 +55,8 @@
 
                     <div class="form-group">
                         <label for="time">Set Time for appointment</label>
-                        <input type="datetime-local" class="form-control" id="time" aria-describedby="emailHelp"
-                            placeholder="Enter the name of the patient">
+                        <input type="datetime-local" name="schedule_time" class="form-control" id="time"
+                            aria-describedby="emailHelp" placeholder="Enter the name of the patient">
                     </div>
 
 
