@@ -21,8 +21,6 @@
 
                     <input type="text" hidden name="doctor_id" value="{{ $user->id }}">
 
-                    <input type="text" hidden name="patient_id" value="{{ Auth::user()->id }}">
-
                     <div class="form-group">
                         <label for="doctor">Doctor</label>
                         <input disabled type="email" class="form-control" id="doctor" aria-describedby="emailHelp"
@@ -33,21 +31,21 @@
 
                     <div class="form-group">
                         <label for="patient">Patient Name</label>
-                        <input type="text" name="patient_name" class="form-control" id="patient"
-                            aria-describedby="emailHelp" placeholder="Enter the name of the patient">
+                        <input type="text" required name="patient_name" class="form-control" id="patient"
+                            aria-describedby="emailHelp" placeholder="Enter the name of the patient"
+                            value="{{ Auth::user()->name }}">
                     </div>
 
                     <div class="form-group">
                         <label for="age">Patient age</label>
-                        <input type="text" name="patient_age" class="form-control" id="age" aria-describedby="emailHelp"
-                            placeholder="Enter the age of the patient">
+                        <input type="text" required name="patient_age" class="form-control" id="age"
+                            aria-describedby="emailHelp" placeholder="Enter the age of the patient">
                     </div>
 
                     <div class="form-group">
                         <label for="gender">Gender</label>
-                        <select name="patient_gender" class="form-control form-group">
-                            <option selected disabled>Select gender</option>
-                            <option value="male">Male</option>
+                        <select required name="patient_gender" class="form-control form-group">
+                            <option selected value="male">Male</option>
                             <option value="female">Female
                             </option>
                         </select>
@@ -55,7 +53,7 @@
 
                     <div class="form-group">
                         <label for="time">Set Time for appointment</label>
-                        <input type="datetime-local" name="schedule_time" class="form-control" id="time"
+                        <input type="datetime-local" required name="schedule_time" class="form-control" id="time"
                             aria-describedby="emailHelp" placeholder="Enter the name of the patient">
                     </div>
 

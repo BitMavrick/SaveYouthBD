@@ -55,16 +55,18 @@ class PatientController extends Controller
 
     public function new_schedule(Request $request)
     {
-        dd(request()->all());
+
 
         $schedule = new Schedule;
+        $schedule->subject = $request->subject;
         $schedule->patient_id = Auth::user()->id;
         $schedule->doctor_id = $request->doctor_id;
-        $schedule->date = $request->date;
-        $schedule->time = $request->time;
-        $schedule->status = 'pending';
+        $schedule->patient_name = $request->patient_name;
+        $schedule->patient_age = $request->patient_age;
+        $schedule->patient_gender = $request->patient_gender;
+        $schedule->schedule_time = $request->schedule_time;
         $schedule->save();
 
-        return redirect()->route('home')->with('success', 'Schedule has been created');
+        return redirect()->route('home');
     }
 }
