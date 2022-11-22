@@ -35,7 +35,7 @@ class PatientController extends Controller
         $profile = profile::where('id', $id)->first();
         $user = User::where('id', $id)->first();
 
-        View()->share('profile', $profile);
+        View()->share('profile_data', $profile);
         View()->share('user', $user);
 
         return view('view-doctor');
