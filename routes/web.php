@@ -10,6 +10,7 @@ Route::get('/', [GeneralController::class, 'welcome'])->name('welcome');
 
 Route::get('doc/home', [DoctorController::class, 'home'])->name('doc.home');
 Route::post('doc/update', [DoctorController::class, 'update'])->name('doc.update');
+Route::post('doc/status', [DoctorController::class, 'status'])->name('doc.status');
 
 Route::get('staff/home', [StaffController::class, 'home'])->name('staff.home');
 

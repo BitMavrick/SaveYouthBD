@@ -49,4 +49,13 @@ class DoctorController extends Controller
 
         return redirect()->route('doc.home');
     }
+
+
+    public function status(Request $request)
+    {
+        $user = User::where('id', Auth::user()->id)->first();
+        $user->active = $request->active;
+        $user->save();
+        return redirect()->route('doc.home');
+    }
 }

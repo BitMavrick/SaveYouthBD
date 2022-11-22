@@ -4,6 +4,15 @@
     <x-partials.update-modal />
 
     <div class="container mt-4">
+
+        @if(!Auth::user()->active)
+
+        <div class="alert alert-warning alert-dismissible fade show" role="alert">
+            <strong>Hello, there!</strong> Your Status is Inactive now. Patient will no longer interact with you.
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+        @endif
+
         <section id="main-content">
             <div class="row">
                 <div class="col-lg-12">
@@ -44,17 +53,39 @@
 
                                     <div class="col-lg-8">
                                         <div class="user-profile-name">
-                                            <p class="float-right">
+                                            <div>
+                                                @if($profile_data->gender or $profile_data->experties or
+                                                $profile_data->educational_qualification)
+
+                                                @if(Auth::user()->active)
+                                                <form action="{{route('doc.status')}}" method="POST">
+                                                    @csrf
+                                                    <input name="active" type="text" hidden value="0">
+                                                    <button type="submit" class="btn btn-primary float-right"
+                                                        data-bs-toggle="tooltip" data-bs-placement="top"
+                                                        title="Your status is active now">
+                                                        Set as Inactive
+                                                    </button>
+                                                </form>
+                                                @else
+                                                <form action="{{route('doc.status')}}" method="POST">
+                                                    @csrf
+                                                    <input name="active" type="text" hidden value="1">
+                                                    <button type="submit" class="btn btn-warning float-right"
+                                                        data-bs-toggle="tooltip" data-bs-placement="top"
+                                                        title="Your status is inactive">Set
+                                                        as
+                                                        active
+                                                    </button>
+                                                </form>
+                                                @endif
 
 
-                                                <button type="submit" class="btn btn-solid-border " data-toggle="modal"
-                                                    data-target="#modal-update-doctor">Set as active
-                                                </button>
 
+                                                @endif
 
+                                            </div>
 
-
-                                            </p>
                                             <h1>Welcome,</h1>
 
                                             <h2>Dr. {{ Auth::user()->name }}</h2>
