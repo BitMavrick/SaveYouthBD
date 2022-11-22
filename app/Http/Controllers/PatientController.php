@@ -40,4 +40,15 @@ class PatientController extends Controller
 
         return view('view-doctor');
     }
+
+    public function profile()
+    {
+        $profile = profile::where('id', Auth::user()->id)->first();
+        $user = User::where('id', Auth::user()->id)->first();
+
+        View()->share('profile_data', $profile);
+        View()->share('user', $user);
+
+        return view('profile');
+    }
 }
