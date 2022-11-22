@@ -15,6 +15,15 @@ return new class extends Migration
     {
         Schema::create('schedules', function (Blueprint $table) {
             $table->id();
+            $table->string('subject');
+            $table->string('Doctor_id');
+            $table->string('patient_id');
+            $table->string('patient_name');
+            $table->string('patient_age');
+            $table->string('patient_gender');
+            $table->string('meet_link') ->nullable();
+            $table->dateTime('schedule_time');
+            $table->boolean('approve')->default(0); 
             $table->timestamps();
         });
     }

@@ -6,7 +6,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 
 use App\Models\User;
-use App\Models\profile;
+use App\Models\Profile;
 
 class PatientController extends Controller
 {
@@ -19,10 +19,10 @@ class PatientController extends Controller
         } elseif (isset(Auth::user()->role) and Auth::user()->role == 'patient') {
 
             $doctors = User::where('role', 'doctor')->get();
-            $all_profile = profile::all();
+            $all_profile = Profile::all();
 
             view()->share('doctors', $doctors);
-            view()->share('all_profile', $all_profile);
+            view()->share('profile', $all_profile);
 
             return view('index-patient');
         } else {

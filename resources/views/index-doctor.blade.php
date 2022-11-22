@@ -5,7 +5,7 @@
 
     <div class="container mt-4">
 
-        @if(!Auth::user()->active)
+        @if(!Auth::user()->active and $profile_data->gender and $profile_data->experties)
 
         <div class="alert alert-warning alert-dismissible fade show" role="alert">
             <strong>Hello, there!</strong> Your Status is Inactive now. Patient will no longer interact with you.

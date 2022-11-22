@@ -13,9 +13,9 @@
                 <div class="card">
                     <div class="card-body">
                         <h5 class="card-title">{{ $doctor->name }}</h5>
-                        <p class="card-text fw-bold"> - {{ $all_profile[$doctor->id]->experties }}</p>
+                        <p class="card-text fw-bold"> - {{ $profile[$doctor->id]->experties }}</p>
                         </p>
-                        <p class="card-text">{{ $all_profile[$doctor->id]->description }}</p>
+                        <p class="card-text">{{ $profile[$doctor->id]->description }}</p>
                         </p>
                         <a href="{{route('profile.doc', $doctor->id)}}" class="btn btn-primary">See More</a>
                     </div>
@@ -32,16 +32,16 @@
 
             @foreach($doctors as $doctor)
 
-            @if($all_profile[$doctor->id]->experties and $all_profile[$doctor->id]->description and
-            $all_profile[$doctor->id]->gender)
+            @if($profile[$doctor->id]->experties and $profile[$doctor->id]->description and
+            $profile[$doctor->id]->gender)
 
             <div class="col-3 my-3">
                 <div class="card">
                     <div class="card-body">
                         <h5 class="card-title">{{ $doctor->name }}</h5>
-                        <p class="card-text fw-bold"> - {{ $all_profile[$doctor->id]->experties }}</p>
+                        <p class="card-text fw-bold"> - {{ $profile[$doctor->id]->experties }}</p>
                         </p>
-                        <p class="card-text">{{ $all_profile[$doctor->id]->description }}</p>
+                        <p class="card-text">{{ $profile[$doctor->id]->description }}</p>
                         </p>
                         <a href="{{route('profile.doc', $doctor->id)}}" class="btn btn-primary">See More</a>
                     </div>
