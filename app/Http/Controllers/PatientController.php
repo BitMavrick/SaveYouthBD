@@ -19,10 +19,10 @@ class PatientController extends Controller
         } elseif (isset(Auth::user()->role) and Auth::user()->role == 'patient') {
 
             $doctors = User::where('role', 'doctor')->get();
-            $all_profile = Profile::all();
+            $profiles = Profile::all();
 
             view()->share('doctors', $doctors);
-            view()->share('profile', $all_profile);
+            view()->share('profiles', $profiles);
 
             return view('index-patient');
         } else {
