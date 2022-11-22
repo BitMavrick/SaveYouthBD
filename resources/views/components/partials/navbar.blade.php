@@ -12,7 +12,7 @@
                     </div>
                 </div>
                 <div class="col-lg-10 col-md-8 text-center text-lg-right text-md-right">
-                    <div class="header-top-info mb-2 mb-md-0">
+                    <div class="header-top-info mb-2 mb-md-0 float-right">
                         <a href="tel:+23-345-67890">Call Us : <span>+23-345-67890</span></a>
                         <a href="mailto:support@gmail.com"><i
                                 class="fas fa-envelope mr-2"></i><span>support@gmail.com</span></a>
