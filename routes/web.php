@@ -15,6 +15,7 @@ Route::post('doc/status', [DoctorController::class, 'status'])->name('doc.status
 Route::get('staff/home', [StaffController::class, 'home'])->name('staff.home');
 
 Route::get('/home', [patientController::class, 'home'])->name('home');
+Route::get('/doc/{id}/profile', [patientController::class, 'view_doctor'])->name('profile.doc');
 
 
 require __DIR__ . '/auth.php';

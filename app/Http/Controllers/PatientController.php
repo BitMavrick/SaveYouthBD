@@ -24,11 +24,20 @@ class PatientController extends Controller
             view()->share('doctors', $doctors);
             view()->share('all_profile', $all_profile);
 
-            //dd($doctors);
-
             return view('index-patient');
         } else {
             return redirect()->route('welcome');
         }
+    }
+
+    public function view_doctor($id)
+    {
+        $profile = profile::where('id', $id)->first();
+        $user = User::where('id', $id)->first();
+
+        View()->share('profile', $profile);
+        View()->share('user', $user);
+
+        return view('view-doctor');
     }
 }
