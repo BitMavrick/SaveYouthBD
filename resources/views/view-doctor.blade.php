@@ -1,5 +1,6 @@
 <x-master>
     <x-partials.navbar />
+    <x-partials.schedule-modal />
 
     <div class="container mt-4">
         <section class="main-content">
@@ -155,14 +156,12 @@
                                 </div>
                             </div>
                             <a href="#">
-                                <button class="btn btn-primary float-right" data-bs-toggle="tooltip"
-                                    data-bs-placement="top" title="Doctor active now">
+                                <button class="btn btn-primary float-right" data-toggle="modal" data-target="#schedule">
                                     Create Appointment
                                 </button>
                             </a>
-                            <a href="#">
-                                <button class="btn btn-info float-right" data-bs-toggle="tooltip"
-                                    data-bs-placement="top" title="Doctor active now">
+                            <a href="{{ route('home') }}">
+                                <button class="btn btn-info float-right">
                                     Go Homepage
                                 </button>
                             </a>
