@@ -9,6 +9,7 @@ use App\Models\User;
 use App\Models\Profile;
 use App\Models\Schedule;
 use App\Models\Rehab;
+use App\Models\Request as pickup;
 
 class PatientController extends Controller
 {
@@ -87,5 +88,24 @@ class PatientController extends Controller
         View()->share('rehab', $rehab);
 
         return view('rehab-details');
+    }
+
+    public function request_booking(Request $request)
+    {
+        //dd($request->all());
+        $request_booking = new pickup;
+
+        $request_booking->name = $request->name;
+        $request_booking->patient_id = Auth::user()->id;
+        $request_booking->rehab_id = $request->rehab_id;
+        $request_booking->phone = $request->phone;
+        $request_booking->email = $request->email;
+        $request_booking->address = $request->address;
+
+        $request_booking->save();
+
+
+
+        return redirect()->route('home');
     }
 }

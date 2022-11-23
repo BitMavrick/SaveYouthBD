@@ -1,5 +1,6 @@
 <x-master>
     <x-partials.navbar />
+    <x-partials.modal-booking />
 
     <div class="container mt-4">
         <section class="main-content">
@@ -11,7 +12,6 @@
                                 <div class="row">
                                     <div class="col-lg-12">
                                         <div class="user-profile-name">
-
                                             <h2>{{ $rehab->name }}</h2>
                                         </div>
 
@@ -66,7 +66,7 @@
                                 </div>
                             </div>
                             <a href="#">
-                                <button class="btn btn-primary float-right" data-toggle="modal" data-target="#schedule">
+                                <button class="btn btn-primary float-right" data-toggle="modal" data-target="#booking">
                                     Send Booking Request
                                 </button>
                             </a>
