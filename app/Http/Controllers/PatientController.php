@@ -55,6 +55,9 @@ class PatientController extends Controller
 
     public function schedule()
     {
+        $schedules = Schedule::orderBy('created_at', 'desc')->get();
+
+        view()->share('schedules', $schedules);
         return view('schedule');
     }
 

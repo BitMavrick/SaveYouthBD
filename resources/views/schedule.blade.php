@@ -30,46 +30,6 @@
                                             <td>January 22</td>
                                             <td class="color-primary">$21.56</td>
                                         </tr>
-                                        <tr>
-                                            <td>Kolor Tea Shirt For Women</td>
-                                            <td>
-                                                <span class="badge badge-success">Complete</span>
-                                            </td>
-                                            <td>January 30</td>
-                                            <td class="color-success">$55.32</td>
-                                        </tr>
-                                        <tr>
-                                            <td>Blue Backpack For Baby</td>
-                                            <td>
-                                                <span class="badge badge-danger">Rejected</span>
-                                            </td>
-                                            <td>January 25</td>
-                                            <td class="color-danger">$14.85</td>
-                                        </tr>
-                                        <tr>
-                                            <td>Kolor Tea Shirt For Man</td>
-                                            <td>
-                                                <span class="badge badge-primary">Ongoing</span>
-                                            </td>
-                                            <td>January 22</td>
-                                            <td class="color-primary">$21.56</td>
-                                        </tr>
-                                        <tr>
-                                            <td>Kolor Tea Shirt For Women</td>
-                                            <td>
-                                                <span class="badge badge-success">Complete</span>
-                                            </td>
-                                            <td>January 30</td>
-                                            <td class="color-success">$55.32</td>
-                                        </tr>
-                                        <tr>
-                                            <td>Blue Backpack For Baby</td>
-                                            <td>
-                                                <span class="badge badge-danger">Rejected</span>
-                                            </td>
-                                            <td>January 25</td>
-                                            <td class="color-danger">$14.85</td>
-                                        </tr>
                                     </tbody>
                                 </table>
                             </div>
