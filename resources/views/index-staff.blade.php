@@ -110,61 +110,87 @@
                                 <table class="table table-hover ">
                                     <thead>
                                         <tr>
-                                            <th>Name</th>
+                                            <th>Patient Name</th>
+                                            <th>Doctor Name</th>
+                                            <th>DateTime</th>
                                             <th>Status</th>
-                                            <th>Date</th>
-                                            <th>Price</th>
+                                            <th>Meeting</th>
+                                            <th>Action</th>
                                         </tr>
                                     </thead>
                                     <tbody>
+                                        @foreach($schedules as $schedule)
+                                        <!-- Modal -->
+                                        <div class="modal fade" id="modal{{ $schedule->id }}" tabindex="-1"
+                                            role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                                            <div class="modal-dialog modal-dialog-centered" role="document">
+                                                <div class="modal-content">
+                                                    <div class="modal-header">
+                                                        <h5 class="modal-title" id="exampleModalLongTitle">Set Meeting
+                                                        </h5>
+                                                        <button type="button" class="close" data-dismiss="modal"
+                                                            aria-label="Close">
+                                                            <span aria-hidden="true">&times;</span>
+                                                        </button>
+                                                    </div>
+                                                    <div class="modal-body">
+                                                        <form action="{{ route('set.meeting') }}" method="POST">
+                                                            @csrf
+                                                            <input type="text" hidden name="meeting_id"
+                                                                value="{{$schedule->id}}">
+                                                            <div class="form-group">
+                                                                <label for="exampleInputEmail1">Meeting Link</label>
+                                                                <input type="email" class="form-control"
+                                                                    id="exampleInputEmail1" aria-describedby="emailHelp"
+                                                                    placeholder="Paste the meeting link here">
+                                                            </div>
+                                                            <button type="submit"
+                                                                class="btn btn-primary">Approve</button>
+                                                        </form>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+
                                         <tr>
-                                            <td>Kolor Tea Shirt For Man</td>
-                                            <td>
-                                                <span class="badge badge-primary">Ongoing</span>
+                                            <td>{{ $schedule->patient_name }}</td>
+                                            @foreach($doctors as $doctor)
+                                            @if($doctor->id == $schedule->doctor_id)
+                                            <td><a
+                                                    href="{{ route('profile.doc', $doctor->id) }}">{{ $doctor->name }}</a>
                                             </td>
-                                            <td>January 22</td>
-                                            <td class="color-primary">$21.56</td>
-                                        </tr>
-                                        <tr>
-                                            <td>Kolor Tea Shirt For Women</td>
+                                            @endif
+                                            @endforeach
+                                            <td>{{ $schedule->schedule_time }}</td>
+                                            @if($schedule->approve == 0)
                                             <td>
-                                                <span class="badge badge-success">Complete</span>
+                                                <span class="badge badge-secondary">pending</span>
                                             </td>
-                                            <td>January 30</td>
-                                            <td class="color-success">$55.32</td>
-                                        </tr>
-                                        <tr>
-                                            <td>Blue Backpack For Baby</td>
+                                            @elseif($schedule->approve == 1)
                                             <td>
-                                                <span class="badge badge-danger">Rejected</span>
+                                                <span class="badge badge-success">approved</span>
                                             </td>
-                                            <td>January 25</td>
-                                            <td class="color-danger">$14.85</td>
-                                        </tr>
-                                        <tr>
-                                            <td>Kolor Tea Shirt For Man</td>
+                                            @elseif($schedule->approve == 2)
                                             <td>
-                                                <span class="badge badge-primary">Ongoing</span>
+                                                <span class="badge badge-danger">rejected</span>
                                             </td>
-                                            <td>January 22</td>
-                                            <td class="color-primary">$21.56</td>
+                                            @endif
+
+                                            @if($schedule->meet_link == null)
+                                            <td><a href="" data-toggle="modal"
+                                                    data-target="#modal{{ $schedule->id }}"><span
+                                                        class="badge badge-success">Set Now</span></a></td>
+                                            @else
+
+                                            <td><a href="{{ $schedule->meet_link }}"> <span
+                                                        class="badge badge-success">Join Now</span></td>
+                                            @endif
+
+                                            <td><span class="badge badge-danger">Delete</span></td>
                                         </tr>
-                                        <tr>
-                                            <td>Kolor Tea Shirt For Women</td>
-                                            <td>
-                                                <span class="badge badge-success">Complete</span>
-                                            </td>
-                                            <td>January 30</td>
-                                            <td class="color-success">$55.32</td>
-                                        </tr>
-                                        <tr>
-                                            <td>Blue Backpack For Baby</td>
-                                            <td>
-                                                <span class="badge badge-danger">Rejected</span>
-                                            </td>
-                                            <td>January 25</td>
-                                            <td class="color-danger">$14.85</td>
-                                        </tr>
+
+                                        @endforeach
                                     </tbody>
                                 </table>
                             </div>
