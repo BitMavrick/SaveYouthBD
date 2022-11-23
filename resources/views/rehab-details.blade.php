@@ -1,6 +1,6 @@
 <x-master>
     <x-partials.navbar />
-    <x-partials.modal-booking />
+    
 
     <div class="container mt-4">
         <section class="main-content">

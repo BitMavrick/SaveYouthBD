@@ -55,20 +55,20 @@
                 <div class="col-lg-6">
                     <div class="copyright">
                         Copyright &copy; 2020, Designed &amp; Developed by
-                        <a href="https://themefisher.com/">Themefisher</a>
+                        <a href="#">Sabiha Khan Tuli</a>
                     </div>
                 </div>
                 <div class="col-lg-6 text-left text-lg-right">
                     <ul class="list-inline footer-socials">
                         <li class="list-inline-item">
-                            <a href="https://www.facebook.com/themefisher"><i
+                            <a href="https://www.facebook.com/savyouthbd"><i
                                     class="fab fa-facebook-f mr-2"></i>Facebook</a>
                         </li>
                         <li class="list-inline-item">
-                            <a href="https://twitter.com/themefisher"><i class="fab fa-twitter mr-2"></i>Twitter</a>
+                            <a href="https://twitter.com/savyouthbd"><i class="fab fa-twitter mr-2"></i>Twitter</a>
                         </li>
                         <li class="list-inline-item">
-                            <a href="https://www.pinterest.com/themefisher/"><i
+                            <a href="https://www.pinterest.com/savyouthbd/"><i
                                     class="fab fa-pinterest-p mr-2"></i>Pinterest</a>
                         </li>
                     </ul>

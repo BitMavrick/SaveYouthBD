@@ -18,9 +18,6 @@
                             aria-describedby="emailHelp" placeholder="Enter patient name">
                     </div>
 
-                    <input type="text" hidden name="patient_id" value="{{ Auth::user()->id }}">
-                    <input type="text" hidden name="rehab_id" value="{{ $rehab->id }}">
-
                     <div class="form-group">
                         <label for="phone">Phone</label>
                         <input required name="phone" type="text" class="form-control" id="phone"
