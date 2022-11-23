@@ -31,6 +31,27 @@
             @endforeach
         </div>
 
+        <h3 class="mt-4">Rehab Centers</h3>
+        <hr>
+        <div class="row">
+            @foreach($rehabs as $rehab)
+
+            <div class="col-3 my-3">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">{{ $rehab->name }}</h5>
+                        <p class="card-text fw-bold"> - {{ $rehab->address }}</p>
+                        </p>
+                        <p class="card-text">{{ $rehab->description }}</p>
+                        </p>
+                        <a href="#" class="btn btn-primary">See More</a>
+                    </div>
+                </div>
+            </div>
+            @endforeach
+
+        </div>
+
         <h3 class="mt-4">All Doctors</h3>
         <hr>
 
@@ -59,6 +80,8 @@
             @endforeach
             @endforeach
         </div>
+
+
 
 
     </div>

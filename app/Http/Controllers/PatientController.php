@@ -8,6 +8,7 @@ use Illuminate\Http\Request;
 use App\Models\User;
 use App\Models\Profile;
 use App\Models\Schedule;
+use App\Models\Rehab;
 
 class PatientController extends Controller
 {
@@ -21,9 +22,11 @@ class PatientController extends Controller
 
             $doctors = User::where('role', 'doctor')->get();
             $profiles = Profile::all();
+            $rehabs = Rehab::all();
 
             view()->share('doctors', $doctors);
             view()->share('profiles', $profiles);
+            view()->share('rehabs', $rehabs);
 
             return view('index-patient');
         } else {
