@@ -15,21 +15,50 @@
                                 <table class="table table-hover ">
                                     <thead>
                                         <tr>
-                                            <th>Name</th>
+                                            <th>Patient Name</th>
+                                            <th>Doctor Name</th>
+                                            <th>DateTime</th>
                                             <th>Status</th>
-                                            <th>Date</th>
-                                            <th>Price</th>
+                                            <th>Meeting</th>
                                         </tr>
                                     </thead>
                                     <tbody>
+                                        @foreach($schedules as $schedule)
+                                        @if($schedule->patient_id == Auth::user()->id)
                                         <tr>
-                                            <td>Kolor Tea Shirt For Man</td>
-                                            <td>
-                                                <span class="badge badge-primary">Ongoing</span>
+                                            <td>{{ $schedule->patient_name }}</td>
+                                            @foreach($doctors as $doctor)
+                                            @if($doctor->id == $schedule->doctor_id)
+                                            <td><a
+                                                    href="{{ route('profile.doc', $doctor->id) }}">{{ $doctor->name }}</a>
                                             </td>
-                                            <td>January 22</td>
-                                            <td class="color-primary">$21.56</td>
+                                            @endif
+                                            @endforeach
+                                            <td>{{ $schedule->schedule_time }}</td>
+                                            @if($schedule->approve == 0)
+                                            <td>
+                                                <span class="badge badge-secondary">pending</span>
+                                            </td>
+                                            @elseif($schedule->approve == 1)
+                                            <td>
+                                                <span class="badge badge-success">approved</span>
+                                            </td>
+                                            @elseif($schedule->approve == 2)
+                                            <td>
+                                                <span class="badge badge-danger">rejected</span>
+                                            </td>
+                                            @endif
+
+                                            @if($schedule->meet_link == null)
+                                            <td><span class="badge badge-danger">N/A</span></td>
+                                            @else
+
+                                            <td><a href="{{ $schedule->meet_link }}"> <span
+                                                        class="badge badge-success">Join Now</span></td>
+                                            @endif
                                         </tr>
+                                        @endif
+                                        @endforeach
                                     </tbody>
                                 </table>
                             </div>

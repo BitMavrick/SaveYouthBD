@@ -56,8 +56,10 @@ class PatientController extends Controller
     public function schedule()
     {
         $schedules = Schedule::orderBy('created_at', 'desc')->get();
+        $doctors = User::where('role', 'doctor')->get();
 
         view()->share('schedules', $schedules);
+        view()->share('doctors', $doctors);
         return view('schedule');
     }
 
@@ -73,6 +75,6 @@ class PatientController extends Controller
         $schedule->schedule_time = $request->schedule_time;
         $schedule->save();
 
-        return redirect()->route('home');
+        return redirect()->route('schedule');
     }
 }

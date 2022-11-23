@@ -23,7 +23,7 @@ return new class extends Migration
             $table->string('patient_gender');
             $table->string('meet_link')->nullable();
             $table->dateTime('schedule_time');
-            $table->boolean('approve')->default(0);
+            $table->integer('approve')->default(0);
             $table->timestamps();
         });
     }
