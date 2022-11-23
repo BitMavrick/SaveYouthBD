@@ -156,7 +156,8 @@
                                 </div>
                             </div>
                             <a href="#">
-                                <button class="btn btn-primary float-right" data-toggle="modal" data-target="#schedule">
+                                <button {{ $user->active ? "" : "disabled"}} class="btn btn-primary float-right"
+                                    data-toggle="modal" data-target="#schedule">
                                     Create Appointment
                                 </button>
                             </a>

@@ -6,6 +6,7 @@ use Illuminate\Support\Facades\Auth;
 
 use App\Models\User;
 use App\Models\profile;
+use App\Models\Schedule;
 
 use Illuminate\Http\Request;
 
@@ -16,6 +17,11 @@ class DoctorController extends Controller
         if (isset(Auth::user()->role) and Auth::user()->role == 'doctor') {
             $profile = profile::where('id', Auth::user()->id)->first();
             View()->share('profile_data', $profile);
+
+            $schedules = Schedule::orderBy('created_at', 'desc')->get();
+            view()->share('schedules', $schedules);
+
+
             return view('index-doctor');
         } elseif (isset(Auth::user()->role) and Auth::user()->role == 'staff') {
             return redirect()->route('staff.home');

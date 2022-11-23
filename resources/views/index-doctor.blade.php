@@ -207,61 +207,29 @@
                                 <table class="table table-hover ">
                                     <thead>
                                         <tr>
-                                            <th>Name</th>
-                                            <th>Status</th>
-                                            <th>Date</th>
-                                            <th>Price</th>
+                                            <th>Subject</th>
+                                            <th>Patient Name</th>
+                                            <th>Age</th>
+                                            <th>DateTime</th>
+                                            <th>Meeting</th>
                                         </tr>
                                     </thead>
                                     <tbody>
+                                        @foreach($schedules as $schedule)
+                                        @if($schedule->doctor_id == Auth::user()->id and $schedule->approve == 1)
                                         <tr>
-                                            <td>Kolor Tea Shirt For Man</td>
+                                            <td>{{ $schedule->subject }}</td>
                                             <td>
-                                                <span class="badge badge-primary">Ongoing</span>
+                                                {{ $schedule->patient_name }}
                                             </td>
-                                            <td>January 22</td>
-                                            <td class="color-primary">$21.56</td>
+                                            <td>{{ $schedule->patient_age }}</td>
+                                            <td>{{ $schedule->schedule_time }}</td>
+                                            <td><a href="{{ $schedule->meet_link }}"> <span
+                                                        class="badge badge-success">Join Now</span></td>
                                         </tr>
-                                        <tr>
-                                            <td>Kolor Tea Shirt For Women</td>
-                                            <td>
-                                                <span class="badge badge-success">Complete</span>
-                                            </td>
-                                            <td>January 30</td>
-                                            <td class="color-success">$55.32</td>
-                                        </tr>
-                                        <tr>
-                                            <td>Blue Backpack For Baby</td>
-                                            <td>
-                                                <span class="badge badge-danger">Rejected</span>
-                                            </td>
-                                            <td>January 25</td>
-                                            <td class="color-danger">$14.85</td>
-                                        </tr>
-                                        <tr>
-                                            <td>Kolor Tea Shirt For Man</td>
-                                            <td>
-                                                <span class="badge badge-primary">Ongoing</span>
-                                            </td>
-                                            <td>January 22</td>
-                                            <td class="color-primary">$21.56</td>
-                                        </tr>
-                                        <tr>
-                                            <td>Kolor Tea Shirt For Women</td>
-                                            <td>
-                                                <span class="badge badge-success">Complete</span>
-                                            </td>
-                                            <td>January 30</td>
-                                            <td class="color-success">$55.32</td>
-                                        </tr>
-                                        <tr>
-                                            <td>Blue Backpack For Baby</td>
-                                            <td>
-                                                <span class="badge badge-danger">Rejected</span>
-                                            </td>
-                                            <td>January 25</td>
-                                            <td class="color-danger">$14.85</td>
-                                        </tr>
+                                        @endif
+                                        @endforeach
+
                                     </tbody>
                                 </table>
                             </div>
