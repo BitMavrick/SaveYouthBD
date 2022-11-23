@@ -14,6 +14,8 @@ Route::post('doc/status', [DoctorController::class, 'status'])->name('doc.status
 
 Route::get('staff/home', [StaffController::class, 'home'])->name('staff.home');
 Route::post('set/meeting', [StaffController::class, 'set_meeting'])->name('set.meeting');
+Route::post('/reject/schedule', [StaffController::class, 'reject_schedule'])->name('reject.schedule');
+
 
 Route::get('/home', [patientController::class, 'home'])->name('home');
 Route::get('/profile', [patientController::class, 'profile'])->name('profile');

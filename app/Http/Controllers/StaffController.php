@@ -33,7 +33,24 @@ class StaffController extends Controller
 
     public function set_meeting(Request $request)
     {
+        $schedule = Schedule::where('id', $request->meeting_id)->first();
 
-        dd($request->all());
+        $schedule->approve = '1';
+        $schedule->meet_link = $request->meet_link;
+
+        $schedule->save();
+
+        return redirect()->route('staff.home');
+    }
+
+    public function reject_schedule(Request $request)
+    {
+        $schedule = Schedule::where('id', $request->meeting_id)->first();
+        $schedule->approve = '2';
+        $schedule->meet_link = null;
+
+        $schedule->save();
+
+        return redirect()->route('staff.home');
     }
 }

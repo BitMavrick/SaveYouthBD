@@ -9,8 +9,6 @@
                         <div class="card-body">
                             <div class="user-profile">
                                 <div class="row">
-
-
                                     <div class="col-lg-12">
                                         <div class="user-profile-name">
                                             <h1>Hello,</h1>
@@ -140,9 +138,11 @@
                                                                 value="{{$schedule->id}}">
                                                             <div class="form-group">
                                                                 <label for="exampleInputEmail1">Meeting Link</label>
-                                                                <input type="email" class="form-control"
-                                                                    id="exampleInputEmail1" aria-describedby="emailHelp"
-                                                                    placeholder="Paste the meeting link here">
+                                                                <input type="text" required name="meet_link"
+                                                                    class="form-control" id="exampleInputEmail1"
+                                                                    aria-describedby="emailHelp"
+                                                                    placeholder="Paste the meeting link here"
+                                                                    value="{{$schedule->meet_link}}">
                                                             </div>
                                                             <button type="submit"
                                                                 class="btn btn-primary">Approve</button>
@@ -158,7 +158,7 @@
                                             @foreach($doctors as $doctor)
                                             @if($doctor->id == $schedule->doctor_id)
                                             <td><a
-                                                    href="{{ route('profile.doc', $doctor->id) }}">{{ $doctor->name }}</a>
+                                                    href=" {{ route('profile.doc', $doctor->id) }}">{{ $doctor->name }}</a>
                                             </td>
                                             @endif
                                             @endforeach
@@ -180,14 +180,30 @@
                                             @if($schedule->meet_link == null)
                                             <td><a href="" data-toggle="modal"
                                                     data-target="#modal{{ $schedule->id }}"><span
-                                                        class="badge badge-success">Set Now</span></a></td>
+                                                        class="badge badge-success">Set
+                                                        Now</span></a></td>
                                             @else
 
-                                            <td><a href="{{ $schedule->meet_link }}"> <span
-                                                        class="badge badge-success">Join Now</span></td>
+                                            <td><a href="" data-toggle="modal"
+                                                    data-target="#modal{{ $schedule->id }}"><span
+                                                        class="badge badge-warning">Update</span></a>
+                                            </td>
                                             @endif
 
-                                            <td><span class="badge badge-danger">Delete</span></td>
+                                            <td>
+                                                @if($schedule->approve == 0 or $schedule->approve == 1)
+                                                <form action="{{route('reject.schedule')}}" method="POST">
+                                                    @csrf
+                                                    <input type="text" hidden name="meeting_id"
+                                                        value="{{$schedule->id}}">
+
+                                                    <button type="submit"><span
+                                                            class="badge badge-danger">Reject</span></button>
+                                                </form>
+                                                @else
+                                                <span class="badge badge-danger">rejected</span>
+                                                @endif
+                                            </td>
                                         </tr>
 
                                         @endforeach
