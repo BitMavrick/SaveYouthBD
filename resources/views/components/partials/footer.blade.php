@@ -51,7 +51,7 @@
             <div class="row">
                 <div class="col-lg-6">
                     <div class="copyright">
-                        Copyright &copy; 2020, Designed &amp; Developed by
+                        Copyright &copy; 2022, Designed &amp; Developed by
                         <a href="#">Sabiha Khan Tuli</a>
                     </div>
                 </div>

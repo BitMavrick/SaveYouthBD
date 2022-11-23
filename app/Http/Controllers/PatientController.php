@@ -48,23 +48,31 @@ class PatientController extends Controller
 
     public function profile()
     {
-        $profile = profile::where('id', Auth::user()->id)->first();
-        $user = User::where('id', Auth::user()->id)->first();
+        if (isset(Auth::user()->role) and Auth::user()->role == 'patient') {
+            $profile = profile::where('id', Auth::user()->id)->first();
+            $user = User::where('id', Auth::user()->id)->first();
 
-        View()->share('profile_data', $profile);
-        View()->share('user', $user);
+            View()->share('profile_data', $profile);
+            View()->share('user', $user);
 
-        return view('profile');
+            return view('profile');
+        } else {
+            return redirect()->route('welcome');
+        }
     }
 
     public function schedule()
     {
-        $schedules = Schedule::orderBy('created_at', 'desc')->get();
-        $doctors = User::where('role', 'doctor')->get();
+        if (isset(Auth::user()->role) and Auth::user()->role == 'patient') {
+            $schedules = Schedule::orderBy('created_at', 'desc')->get();
+            $doctors = User::where('role', 'doctor')->get();
 
-        view()->share('schedules', $schedules);
-        view()->share('doctors', $doctors);
-        return view('schedule');
+            view()->share('schedules', $schedules);
+            view()->share('doctors', $doctors);
+            return view('schedule');
+        } else {
+            return redirect()->route('welcome');
+        }
     }
 
     public function new_schedule(Request $request)
@@ -96,8 +104,6 @@ class PatientController extends Controller
         $request_booking = new pickup;
 
         $request_booking->name = $request->name;
-        $request_booking->patient_id = Auth::user()->id;
-        $request_booking->rehab_id = $request->rehab_id;
         $request_booking->phone = $request->phone;
         $request_booking->email = $request->email;
         $request_booking->address = $request->address;
@@ -109,10 +115,14 @@ class PatientController extends Controller
 
     public function list_request()
     {
-        $requests = pickup::where('patient_id', Auth::user()->id)->get();
+        if (isset(Auth::user()->role) and Auth::user()->role == 'patient') {
+            $requests = pickup::where('patient_id', Auth::user()->id)->get();
 
-        view()->share('requests', $requests);
+            view()->share('requests', $requests);
 
-        return view('request-list');
+            return view('request-list');
+        } else {
+            return redirect()->route('welcome');
+        }
     }
 }
