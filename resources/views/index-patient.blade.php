@@ -44,7 +44,7 @@
                         </p>
                         <p class="card-text">{{ $rehab->description }}</p>
                         </p>
-                        <a href="#" class="btn btn-primary">See More</a>
+                        <a href="{{ route('rehab.details', $rehab->id) }}" class="btn btn-primary">View Details</a>
                     </div>
                 </div>
             </div>

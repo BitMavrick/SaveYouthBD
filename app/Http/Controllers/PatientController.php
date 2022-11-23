@@ -80,4 +80,12 @@ class PatientController extends Controller
 
         return redirect()->route('schedule');
     }
+
+    public function rehab_details($id)
+    {
+        $rehab = Rehab::where('id', $id)->first();
+        View()->share('rehab', $rehab);
+
+        return view('rehab-details');
+    }
 }

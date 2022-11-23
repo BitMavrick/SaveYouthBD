@@ -28,6 +28,7 @@ Route::get('/profile', [patientController::class, 'profile'])->name('profile');
 Route::get('/doc/{id}/profile', [patientController::class, 'view_doctor'])->name('profile.doc');
 Route::post('/new/schedule', [patientController::class, 'new_schedule'])->name('new.schedule');
 Route::get('/schedule', [patientController::class, 'schedule'])->name('schedule');
+Route::get('/rehab/{id}/details', [patientController::class, 'rehab_details'])->name('rehab.details');
 
 //Authentications
 require __DIR__ . '/auth.php';
