@@ -21,7 +21,7 @@
                                 </li>
 
                                 <li class="nav-item @@service">
-                                    <a class="nav-link" href="#">Rehab Center</a>
+                                    <a class="nav-link" href="{{ route('rehab') }}">Rehab Center</a>
                                 </li>
 
 
