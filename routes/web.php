@@ -21,6 +21,7 @@ Route::post('/reject/schedule', [StaffController::class, 'reject_schedule'])->na
 Route::get('/rehab', [StaffController::class, 'rehab'])->name('rehab');
 Route::post('/create/rehab', [StaffController::class, 'create_rehab'])->name('create.rehab');
 Route::post('/update/rehab', [StaffController::class, 'update_rehab'])->name('update.rehab');
+Route::get('/all/request', [StaffController::class, 'all_request'])->name('all.request');
 
 //Patient
 Route::get('/home', [patientController::class, 'home'])->name('home');

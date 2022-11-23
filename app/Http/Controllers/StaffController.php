@@ -8,6 +8,7 @@ use App\Models\User;
 use App\Models\profile;
 use App\Models\Schedule;
 use App\Models\Rehab;
+use App\Models\Request as pickup;
 
 class StaffController extends Controller
 {
@@ -94,5 +95,13 @@ class StaffController extends Controller
         view()->share('rehabs', $rehabs);
 
         return view('rehab');
+    }
+
+    public function all_request()
+    {
+        $requests = pickup::orderBy('created_at', 'desc')->get();
+        view()->share('requests', $requests);
+
+        return view('list-request-all');
     }
 }
