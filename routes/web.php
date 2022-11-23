@@ -19,6 +19,8 @@ Route::get('staff/home', [StaffController::class, 'home'])->name('staff.home');
 Route::post('set/meeting', [StaffController::class, 'set_meeting'])->name('set.meeting');
 Route::post('/reject/schedule', [StaffController::class, 'reject_schedule'])->name('reject.schedule');
 Route::get('/rehab', [StaffController::class, 'rehab'])->name('rehab');
+Route::post('/create/rehab', [StaffController::class, 'create_rehab'])->name('create.rehab');
+Route::post('/update/rehab', [StaffController::class, 'update_rehab'])->name('update.rehab');
 
 //Patient
 Route::get('/home', [patientController::class, 'home'])->name('home');

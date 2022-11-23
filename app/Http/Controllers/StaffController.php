@@ -55,8 +55,44 @@ class StaffController extends Controller
         return redirect()->route('staff.home');
     }
 
+    public function create_rehab(Request $request)
+    {
+        $rehab = new Rehab;
+
+        $rehab->name = $request->name;
+        $rehab->address = $request->address;
+        $rehab->phone = $request->phone;
+        $rehab->email = $request->email;
+        $rehab->min_age = $request->min_age;
+        $rehab->description = $request->description;
+
+        $rehab->save();
+
+        return redirect()->route('rehab');
+    }
+
+    public function update_rehab(Request $request)
+    {
+        $rehab = Rehab::where('id', $request->id)->first();
+
+        $rehab->name = $request->name;
+        $rehab->address = $request->address;
+        $rehab->phone = $request->phone;
+        $rehab->email = $request->email;
+        $rehab->min_age = $request->min_age;
+        $rehab->description = $request->description;
+
+        $rehab->save();
+
+        return redirect()->route('rehab');
+    }
+
+
     public function rehab()
     {
+        $rehabs = Rehab::orderBy('created_at', 'desc')->get();
+        view()->share('rehabs', $rehabs);
+
         return view('rehab');
     }
 }
