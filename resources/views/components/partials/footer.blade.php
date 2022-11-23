@@ -6,10 +6,8 @@
                     <h4 class="text-capitalize mb-4">Company</h4>
 
                     <ul class="list-unstyled footer-menu lh-35">
-                        <li><a href="about.html">Terms & Conditions</a></li>
-                        <li><a href="about.html">Privacy Policy</a></li>
-                        <li><a href="cobtact.html">Support</a></li>
-                        <li><a href="cobtact.html">FAQ</a></li>
+                        <li><a href="#" data-toggle="modal" data-target="#booking">Emergengy Booking</a></li>
+
                     </ul>
                 </div>
             </div>
@@ -18,10 +16,9 @@
                     <h4 class="text-capitalize mb-4">Quick Links</h4>
 
                     <ul class="list-unstyled footer-menu lh-35">
-                        <li><a href="about.html">About</a></li>
-                        <li><a href="service.html">Services</a></li>
-                        <li><a href="blog-grid.html">Blogs</a></li>
-                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="{{ route('welcome') }}">Welcome</a></li>
+                        <li><a href="{{ route('home') }}">Home</a></li>
+
                     </ul>
                 </div>
             </div>
@@ -43,9 +40,9 @@
                         <h3>Save<span>Youth</span>BD.</h3>
                     </div>
                     <h6>
-                        <a href="mailto:support@gmail.com">Support@megakit.com</a>
+                        <a href="mailto:support@gmail.com">Support.saveyouthbd@gmail.com</a>
                     </h6>
-                    <a href="tel:+23-345-67890"><span class="text-color h4">+23-456-6588</span></a>
+                    <a href="tel:+880161-7061174"><span class="text-color h4">+880161-7061174 </span></a>
                 </div>
             </div>
         </div>
