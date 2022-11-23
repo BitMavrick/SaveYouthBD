@@ -17,76 +17,15 @@
 
                         <div class="collapse navbar-collapse text-center" id="navbarsExample09">
                             <ul class="navbar-nav ml-auto">
-                                <li class="nav-item active">
+                                <li class="nav-item">
                                     <a class="nav-link" href="index.html">Home</a>
                                 </li>
-                                <li class="nav-item dropdown @@about">
-                                    <a class="nav-link dropdown-toggle" href="#" id="dropdown03" data-toggle="dropdown"
-                                        aria-haspopup="true" aria-expanded="false">About <i
-                                            class="fas fa-chevron-down small"></i></a>
-                                    <ul class="dropdown-menu" aria-labelledby="dropdown03">
-                                        <li>
-                                            <a class="dropdown-item @@company" href="about.html">Our company</a>
-                                        </li>
-                                        <li>
-                                            <a class="dropdown-item @@pricing" href="pricing.html">Pricing</a>
-                                        </li>
 
-                                        <li class="dropdown dropdown-submenu dropright">
-                                            <a class="dropdown-item dropdown-toggle" href="#!" id="dropdown0301"
-                                                role="button" data-toggle="dropdown" aria-haspopup="true"
-                                                aria-expanded="false">Sub Menu</a>
-
-                                            <ul class="dropdown-menu" aria-labelledby="dropdown0301">
-                                                <li>
-                                                    <a class="dropdown-item" href="index.html">Submenu 01</a>
-                                                </li>
-                                                <li>
-                                                    <a class="dropdown-item" href="index.html">Submenu 02</a>
-                                                </li>
-                                            </ul>
-                                        </li>
-                                    </ul>
-                                </li>
                                 <li class="nav-item @@service">
-                                    <a class="nav-link" href="service.html">Services</a>
+                                    <a class="nav-link" href="service.html">Meeting</a>
                                 </li>
-                                <li class="nav-item @@project">
-                                    <a class="nav-link" href="project.html">Portfolio</a>
-                                </li>
-                                <li class="nav-item dropdown @@blog">
-                                    <a class="nav-link dropdown-toggle" href="#" id="dropdown05" data-toggle="dropdown"
-                                        aria-haspopup="true" aria-expanded="false">Blog <i
-                                            class="fas fa-chevron-down small"></i></a>
-                                    <ul class="dropdown-menu" aria-labelledby="dropdown05">
-                                        <li>
-                                            <a class="dropdown-item @@blogGrid" href="blog-grid.html">Blog Grid</a>
-                                        </li>
-                                        <li>
-                                            <a class="dropdown-item @@blogSidebar" href="blog-sidebar.html">Blog
-                                                with Sidebar</a>
-                                        </li>
-                                        <li>
-                                            <a class="dropdown-item @@blogSingle" href="blog-single.html">Blog
-                                                Single</a>
-                                        </li>
 
-                                        <li class="dropdown dropdown-submenu dropleft">
-                                            <a class="dropdown-item dropdown-toggle" href="#!" id="dropdown0501"
-                                                role="button" data-toggle="dropdown" aria-haspopup="true"
-                                                aria-expanded="false">Sub Menu</a>
 
-                                            <ul class="dropdown-menu" aria-labelledby="dropdown0501">
-                                                <li>
-                                                    <a class="dropdown-item" href="index.html">Submenu 01</a>
-                                                </li>
-                                                <li>
-                                                    <a class="dropdown-item">Submenu 02</a>
-                                                </li>
-                                            </ul>
-                                        </li>
-                                    </ul>
-                                </li>
 
                                 <li class="nav-item @@project">
                                     <a class="nav-link" data-toggle="modal" href="#"

@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Models\User;
 use App\Models\profile;
 use App\Models\Schedule;
+use App\Models\Rehab;
 
 class StaffController extends Controller
 {
@@ -52,5 +53,10 @@ class StaffController extends Controller
         $schedule->save();
 
         return redirect()->route('staff.home');
+    }
+
+    public function rehab()
+    {
+        return view('rehab');
     }
 }
