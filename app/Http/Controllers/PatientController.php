@@ -53,10 +53,13 @@ class PatientController extends Controller
         return view('profile');
     }
 
+    public function schedule()
+    {
+        return view('schedule');
+    }
+
     public function new_schedule(Request $request)
     {
-
-
         $schedule = new Schedule;
         $schedule->subject = $request->subject;
         $schedule->patient_id = Auth::user()->id;
