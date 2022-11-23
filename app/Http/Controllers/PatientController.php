@@ -92,7 +92,7 @@ class PatientController extends Controller
 
     public function request_booking(Request $request)
     {
-        //dd($request->all());
+
         $request_booking = new pickup;
 
         $request_booking->name = $request->name;
@@ -104,8 +104,15 @@ class PatientController extends Controller
 
         $request_booking->save();
 
+        return redirect()->route('list.request');
+    }
 
+    public function list_request()
+    {
+        $requests = pickup::where('patient_id', Auth::user()->id)->get();
 
-        return redirect()->route('home');
+        view()->share('requests', $requests);
+
+        return view('request-list');
     }
 }

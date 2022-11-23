@@ -44,7 +44,7 @@
                                 </li>
 
                                 <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('home') }}">Requests</a>
+                                    <a class="nav-link" href="{{ route('list.request') }}">Requests</a>
                                 </li>
 
                                 <li class="nav-item @@service">

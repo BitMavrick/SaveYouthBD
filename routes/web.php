@@ -30,6 +30,7 @@ Route::post('/new/schedule', [patientController::class, 'new_schedule'])->name('
 Route::get('/schedule', [patientController::class, 'schedule'])->name('schedule');
 Route::get('/rehab/{id}/details', [patientController::class, 'rehab_details'])->name('rehab.details');
 Route::post('/request/booking', [patientController::class, 'request_booking'])->name('request.booking');
+Route::get('/list/request', [patientController::class, 'list_request'])->name('list.request');
 
 //Authentications
 require __DIR__ . '/auth.php';
