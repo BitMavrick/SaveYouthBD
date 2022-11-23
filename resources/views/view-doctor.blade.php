@@ -4,7 +4,6 @@
 
     <div class="container mt-4">
         <section class="main-content">
-
             <div class="row">
                 <div class="col-lg-12">
                     <div class="card">
@@ -68,15 +67,9 @@
                                                     </button>
                                                 </form>
                                                 @endif
-
-
-
                                                 @endif
 
                                             </div>
-
-
-
                                             <h2>Dr. {{ $user->name }}</h2>
                                         </div>
 

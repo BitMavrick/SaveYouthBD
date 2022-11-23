@@ -21,7 +21,6 @@ class DoctorController extends Controller
             $schedules = Schedule::orderBy('created_at', 'desc')->get();
             view()->share('schedules', $schedules);
 
-
             return view('index-doctor');
         } elseif (isset(Auth::user()->role) and Auth::user()->role == 'staff') {
             return redirect()->route('staff.home');
