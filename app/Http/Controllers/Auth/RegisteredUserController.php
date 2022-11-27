@@ -11,7 +11,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Validation\Rules;
-use Symfony\Component\HttpKernel\Profiler\Profile as ProfilerProfile;
+
 
 class RegisteredUserController extends Controller
 {

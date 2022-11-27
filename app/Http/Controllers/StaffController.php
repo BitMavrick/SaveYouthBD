@@ -85,7 +85,7 @@ class StaffController extends Controller
 
         $rehab->save();
 
-        return redirect()->route('rehab');
+        return redirect()->route('rehab.details', ['id' => $request->id]);
     }
 
 
@@ -95,6 +95,14 @@ class StaffController extends Controller
         view()->share('rehabs', $rehabs);
 
         return view('rehab');
+    }
+
+    public function delete_rehab(Request $request)
+    {
+        $rehab = Rehab::where('id', $request->id)->first();
+        $rehab->delete();
+
+        return redirect()->route('rehab');
     }
 
     public function all_request()
