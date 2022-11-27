@@ -100,13 +100,20 @@ class PatientController extends Controller
 
     public function request_booking(Request $request)
     {
-
         $request_booking = new pickup;
 
         $request_booking->name = $request->name;
         $request_booking->phone = $request->phone;
         $request_booking->email = $request->email;
         $request_booking->address = $request->address;
+
+        if ($request->user_id) {
+            $request_booking->patient_id = $request->user_id;
+        }
+
+        if ($request->rehab_id) {
+            $request_booking->rehab_id = $request->rehab_id;
+        }
 
         $request_booking->save();
 
