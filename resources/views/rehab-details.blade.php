@@ -1,5 +1,9 @@
 <x-master>
+    @if(Auth::user()->role == 'patient')
     <x-partials.navbar />
+    @elseif(Auth::user()->role == 'staff')
+    <x-partials.navbar-staff />
+    @endif
 
     <!-- Modal -->
     <div class="modal fade" id="update_rehab" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"

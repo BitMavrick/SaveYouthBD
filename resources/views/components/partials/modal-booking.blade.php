@@ -17,6 +17,21 @@
                         <input required name="name" type="text" class="form-control" id="name"
                             aria-describedby="emailHelp" placeholder="Enter patient name">
                     </div>
+                    @if(isset($rehab))
+                    <div class="form-group">
+                        <label for="rehab">Rehab Center</label>
+                        <input required name="name" disabled type="text" class="form-control" id="rehab"
+                            aria-describedby="emailHelp" value="{{ $rehab->name }}">
+                    </div>
+                    @endif
+
+                    @if(Auth::check())
+                    <input type="text" hidden name="user_id" value="{{ Auth::user()->id }}">
+                    @endif
+
+                    @if(isset($rehab))
+                    <input type="text" hidden name="rehab_id" value="{{ $rehab->id }}">
+                    @endif
 
                     <div class="form-group">
                         <label for="phone">Phone</label>

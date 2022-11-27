@@ -33,7 +33,7 @@
                                             <td>{{ $rehab->phone }}</td>
                                             <td>{{ $rehab->email }}</td>
                                             <td><a href="{{route('rehab.details', $rehab->id)}}"><span
-                                                        class="badge badge-success">Manage</span></a></td>
+                                                        class="badge badge-success">View Details</span></a></td>
                                         </tr>
 
 

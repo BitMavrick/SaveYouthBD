@@ -33,7 +33,7 @@
                         </h2>
                     </div>
                     <div class="col-lg-4">
-                        <a href="#" data-toggle="modal" data-target="#booking"
+                        <a href="#" data-toggle="modal" data-target="#e-pickup"
                             class="btn btn-main btn-round-full float-lg-right">Get Help</a>
                     </div>
                 </div>
