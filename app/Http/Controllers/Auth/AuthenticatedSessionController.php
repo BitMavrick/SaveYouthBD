@@ -30,7 +30,12 @@ class AuthenticatedSessionController extends Controller
     {
 
         $request->authenticate();
+
         $request->session()->regenerate();
+
+        if (!isset(Auth::user()->role)) {
+            return redirect()->route('welcome')->with('message', 'Invalid Credentials');
+        }
 
         if (Auth::user()->role == 'doctor') {
             return redirect()->route('doc.home');
