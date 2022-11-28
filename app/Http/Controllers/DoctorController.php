@@ -31,6 +31,16 @@ class DoctorController extends Controller
         }
     }
 
+    public function meeting()
+    {
+        $profile = profile::where('id', Auth::user()->id)->first();
+        View()->share('profile_data', $profile);
+
+        $schedules = Schedule::orderBy('created_at', 'desc')->get();
+        view()->share('schedules', $schedules);
+        return view('meetings');
+    }
+
     public function update(Request $request)
     {
         $user = User::where('id', Auth::user()->id)->first();

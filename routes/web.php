@@ -12,8 +12,10 @@ Route::get('delete/{id}/request', [GeneralController::class, 'delete_request'])-
 
 //Doctor
 Route::get('doc/home', [DoctorController::class, 'home'])->name('doc.home');
+Route::get('doc/meeting', [DoctorController::class, 'meeting'])->name('doc.meeting');
 Route::post('doc/update', [DoctorController::class, 'update'])->name('doc.update');
 Route::post('doc/status', [DoctorController::class, 'status'])->name('doc.status');
+
 
 //Staff
 Route::get('staff/home', [StaffController::class, 'home'])->name('staff.home');

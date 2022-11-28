@@ -22,7 +22,7 @@
                                 </li>
 
                                 <li class="nav-item @@service">
-                                    <a class="nav-link" href="service.html">Meeting</a>
+                                    <a class="nav-link" href="{{ route('doc.meeting') }}">Meeting</a>
                                 </li>
 
 
