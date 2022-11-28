@@ -108,7 +108,10 @@ class StaffController extends Controller
     public function all_request()
     {
         $requests = pickup::orderBy('created_at', 'desc')->get();
+        $rehabs = Rehab::all();
+
         view()->share('requests', $requests);
+        view()->share('rehabs', $rehabs);
 
         return view('list-request-all');
     }

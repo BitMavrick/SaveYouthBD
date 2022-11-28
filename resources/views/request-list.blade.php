@@ -20,6 +20,7 @@
                                             <th>address</th>
                                             <th>Phone</th>
                                             <th>Email</th>
+                                            <th>Action</th>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -31,6 +32,8 @@
                                             </td>
                                             <td>{{ $request->phone }}</td>
                                             <td>{{ $request->email }}</< /td>
+                                            <td><a href="{{ route('delete.request', $request->id) }}"><span
+                                                        class="badge badge-danger">Dissmiss</span></a></td>
                                         </tr>
                                         @endforeach
 

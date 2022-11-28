@@ -8,6 +8,7 @@ use App\Http\Controllers\PatientController;
 
 //General
 Route::get('/', [GeneralController::class, 'welcome'])->name('welcome');
+Route::get('delete/{id}/request', [GeneralController::class, 'delete_request'])->name('delete.request');
 
 //Doctor
 Route::get('doc/home', [DoctorController::class, 'home'])->name('doc.home');

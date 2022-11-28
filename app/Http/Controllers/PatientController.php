@@ -117,7 +117,11 @@ class PatientController extends Controller
 
         $request_booking->save();
 
-        return redirect()->route('list.request');
+        if ($request->rehab_id) {
+            return redirect()->route('list.request');
+        }
+
+        return redirect()->route('home');
     }
 
     public function list_request()
