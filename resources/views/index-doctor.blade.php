@@ -61,9 +61,7 @@
                                                 <form action="{{route('doc.status')}}" method="POST">
                                                     @csrf
                                                     <input name="active" type="text" hidden value="0">
-                                                    <button type="submit" class="btn btn-primary float-right"
-                                                        data-bs-toggle="tooltip" data-bs-placement="top"
-                                                        title="Your status is active now">
+                                                    <button type="submit" class="btn btn-primary float-right" data-bs-toggle="tooltip" data-bs-placement="top" title="Your status is active now">
                                                         Set as Inactive
                                                     </button>
                                                 </form>
@@ -71,9 +69,7 @@
                                                 <form action="{{route('doc.status')}}" method="POST">
                                                     @csrf
                                                     <input name="active" type="text" hidden value="1">
-                                                    <button type="submit" class="btn btn-warning float-right"
-                                                        data-bs-toggle="tooltip" data-bs-placement="top"
-                                                        title="Your status is inactive">Set
+                                                    <button type="submit" class="btn btn-warning float-right" data-bs-toggle="tooltip" data-bs-placement="top" title="Your status is inactive">Set
                                                         as
                                                         active
                                                     </button>
@@ -140,15 +136,13 @@
                                                         @if($profile_data->email)
                                                         <div class="email-content">
                                                             <span class="contact-title">Email:</span>
-                                                            <span
-                                                                class="contact-email">{{ $profile_data->email }}</span>
+                                                            <span class="contact-email">{{ $profile_data->email }}</span>
                                                         </div>
                                                         @endif
                                                         @if($profile_data->website)
                                                         <div class="website-content">
                                                             <span class="contact-title">Website:</span>
-                                                            <span
-                                                                class="contact-website">{{$profile_data->website}}</span>
+                                                            <span class="contact-website">{{$profile_data->website}}</span>
                                                         </div>
                                                         @endif
 
@@ -188,8 +182,7 @@
                     <div class="card p-4">
                         <h5 class="text-center">Please complete your profile before start your journey. Good luck!</h5>
                         <br>
-                        <p class="text-center"><button type="submit" class="btn btn-solid-border btn-round-full"
-                                data-toggle="modal" data-target="#modal-update-doctor">Complete Profile</button></p>
+                        <p class="text-center"><button type="submit" class="btn btn-solid-border btn-round-full" data-toggle="modal" data-target="#modal-update-doctor">Complete Profile</button></p>
                     </div>
                 </div>
             </div>
@@ -224,8 +217,7 @@
                                             </td>
                                             <td>{{ $schedule->patient_age }}</td>
                                             <td>{{ $schedule->schedule_time }}</td>
-                                            <td><a href="{{ $schedule->meet_link }}"> <span
-                                                        class="badge badge-success">Join Now</span></td>
+                                            <td><a href="{{ $schedule->meet_link }}"> <span class="badge badge-success">Join Now</span></td>
                                         </tr>
                                         @endif
                                         @endforeach
