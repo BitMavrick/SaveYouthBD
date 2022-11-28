@@ -42,7 +42,7 @@ class RegisteredUserController extends Controller
 
         if ($request->pass1 == $request->pass2) {
         } else {
-            return redirect()->route('welcome');
+            return redirect()->route('welcome')->with('message', 'Password does not match');
         }
 
         $user = User::create([
