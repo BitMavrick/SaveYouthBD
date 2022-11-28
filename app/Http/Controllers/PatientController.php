@@ -121,7 +121,7 @@ class PatientController extends Controller
             return redirect()->route('list.request');
         }
 
-        return redirect()->route('home');
+        return redirect()->route('home')->with('message', 'Request has been sent!');
     }
 
     public function list_request()

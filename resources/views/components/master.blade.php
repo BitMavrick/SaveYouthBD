@@ -62,6 +62,12 @@ Essential Scripts
     <script src="/plugins/google-map/map.js" defer></script>
 
     <script src="/js/script.js"></script>
+
+    @if(session()->has('message'))
+    <script>
+    alert("{{ session()->get('message') }}");
+    </script>
+    @endif
 </body>
 
 </html>
