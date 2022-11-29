@@ -175,6 +175,10 @@
                                             <td>
                                                 <span class="badge badge-danger">rejected</span>
                                             </td>
+                                            @elseif($schedule->approve == 3)
+                                            <td>
+                                                <span class="badge badge-success">Finished</span>
+                                            </td>
                                             @endif
 
                                             @if($schedule->meet_link == null)
@@ -186,7 +190,7 @@
 
                                             <td><a href="" data-toggle="modal"
                                                     data-target="#modal{{ $schedule->id }}"><span
-                                                        class="badge badge-warning">Update</span></a>
+                                                        class="badge badge-warning">Renew</span></a>
                                             </td>
                                             @endif
 

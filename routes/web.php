@@ -15,6 +15,7 @@ Route::get('doc/home', [DoctorController::class, 'home'])->name('doc.home');
 Route::get('doc/meeting', [DoctorController::class, 'meeting'])->name('doc.meeting');
 Route::post('doc/update', [DoctorController::class, 'update'])->name('doc.update');
 Route::post('doc/status', [DoctorController::class, 'status'])->name('doc.status');
+Route::post('done/meeting', [DoctorController::class, 'done_meeting'])->name('done.meeting');
 
 
 //Staff

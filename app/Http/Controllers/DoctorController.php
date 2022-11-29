@@ -73,4 +73,16 @@ class DoctorController extends Controller
         $user->save();
         return redirect()->route('doc.home');
     }
+
+    public function done_meeting(Request $request)
+    {
+        $schedule = Schedule::where('id', $request->meeting_id)->first();
+
+        $schedule->approve = '3';
+        $schedule->meet_link = $request->meet_link;
+
+        $schedule->save();
+
+        return redirect()->route('doc.meeting');
+    }
 }

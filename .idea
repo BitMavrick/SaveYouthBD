@@ -27,3 +27,9 @@
 -   update appointemnt
 
 4. Super admin (less important)
+
+doctor schedule value system,
+0 = pending
+1 = accepted
+2 = rejected
+3 = done, finished
