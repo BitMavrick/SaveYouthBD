@@ -204,6 +204,8 @@
                                                     <button type="submit"><span
                                                             class="badge badge-danger">Reject</span></button>
                                                 </form>
+                                                @elseif($schedule->approve == 3)
+                                                <span class="badge badge-secondary">Done</span>
                                                 @else
                                                 <span class="badge badge-danger">rejected</span>
                                                 @endif
