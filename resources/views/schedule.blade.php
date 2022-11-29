@@ -47,14 +47,25 @@
                                             <td>
                                                 <span class="badge badge-danger">rejected</span>
                                             </td>
+                                            @elseif($schedule->approve == 3)
+                                            <td>
+                                                <span class="badge badge-success">Done</span>
+                                            </td>
                                             @endif
 
-                                            @if($schedule->meet_link == null)
+                                            @if($schedule->approve == 0)
                                             <td><span class="badge badge-danger">N/A</span></td>
-                                            @else
+                                            @elseif($schedule->approve == 1)
 
                                             <td><a href="{{ $schedule->meet_link }}"> <span
                                                         class="badge badge-success">Join Now</span></td>
+                                            @elseif($schedule->approve == 2)
+                                            <td>
+                                                <span class="badge badge-danger">rejected</span>
+                                            </td>
+                                            @elseif($schedule->approve == 3)
+                                            <td><a href="{{ $schedule->meet_link }}"> <span
+                                                        class="badge badge-success">See Record</span></td>
                                             @endif
                                         </tr>
                                         @endif
