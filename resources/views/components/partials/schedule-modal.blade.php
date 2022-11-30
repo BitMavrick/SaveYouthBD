@@ -37,12 +37,6 @@
                     </div>
 
                     <div class="form-group">
-                        <label for="age">Patient age</label>
-                        <input type="text" required name="patient_age" class="form-control" id="age"
-                            aria-describedby="emailHelp" placeholder="Enter the age of the patient">
-                    </div>
-
-                    <div class="form-group">
                         <label for="gender">Gender</label>
                         <select required name="patient_gender" class="form-control form-group">
                             <option selected value="male">Male</option>
@@ -52,10 +46,20 @@
                     </div>
 
                     <div class="form-group">
-                        <label for="time">Set Time for appointment</label>
-                        <input type="datetime-local" required name="schedule_time" class="form-control" id="time"
-                            aria-describedby="emailHelp" placeholder="Enter the name of the patient">
+                        <label for="schedule_day">Select Day</label>
+                        <select required name="schedule_day" class="form-control form-group">
+                            @foreach($doctimes as $time)
+                            <option selected value="{{ $time->day }}">{{ $time->day }}</option>
+                            @endforeach
+                        </select>
                     </div>
+
+                    <div class="form-group">
+                        <label for="age">Patient age</label>
+                        <input type="text" required name="patient_age" class="form-control" id="age"
+                            aria-describedby="emailHelp" placeholder="Enter the age of the patient">
+                    </div>
+
 
 
                     <button type="submit" class="btn btn-primary">Create</button>

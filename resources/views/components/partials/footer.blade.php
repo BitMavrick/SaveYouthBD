@@ -6,7 +6,7 @@
                     <h4 class="text-capitalize mb-4">Company</h4>
 
                     <ul class="list-unstyled footer-menu lh-35">
-                        <li><a href="#" data-toggle="modal" data-target="#e-pickup">Emergengy Booking</a></li>
+                        <li><a href="#" data-toggle="modal" data-target="#e-pickup">Emergency Booking</a></li>
 
                     </ul>
                 </div>

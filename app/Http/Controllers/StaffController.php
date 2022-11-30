@@ -39,6 +39,8 @@ class StaffController extends Controller
 
         $schedule->approve = '1';
         $schedule->meet_link = $request->meet_link;
+        $schedule->schedule_time = $request->schedule_time;
+
 
         $schedule->save();
 

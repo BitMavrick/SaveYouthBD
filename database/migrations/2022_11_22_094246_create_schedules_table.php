@@ -22,7 +22,8 @@ return new class extends Migration
             $table->string('patient_age');
             $table->string('patient_gender');
             $table->string('meet_link')->nullable();
-            $table->dateTime('schedule_time');
+            $table->dateTime('schedule_time')->nullable();
+            $table->string('schedule_day');
             $table->integer('approve')->default(0);
             $table->timestamps();
         });

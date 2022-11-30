@@ -88,7 +88,7 @@ class PatientController extends Controller
         $schedule->patient_name = $request->patient_name;
         $schedule->patient_age = $request->patient_age;
         $schedule->patient_gender = $request->patient_gender;
-        $schedule->schedule_time = $request->schedule_time;
+        $schedule->schedule_day = $request->schedule_day;
         $schedule->save();
 
         return redirect()->route('schedule');

@@ -110,6 +110,7 @@
                                         <tr>
                                             <th>Patient Name</th>
                                             <th>Doctor Name</th>
+                                            <th>Day</th>
                                             <th>DateTime</th>
                                             <th>Status</th>
                                             <th>Meeting</th>
@@ -144,6 +145,14 @@
                                                                     placeholder="Paste the meeting link here"
                                                                     value="{{$schedule->meet_link}}">
                                                             </div>
+
+                                                            <div class="form-group">
+                                                                <label for="date">Date & Time</label>
+                                                                <input type="datetime-local" required
+                                                                    name="schedule_time" class="form-control" id="date"
+                                                                    aria-describedby="emailHelp">
+
+                                                            </div>
                                                             <button type="submit"
                                                                 class="btn btn-primary">Approve</button>
                                                         </form>
@@ -151,8 +160,6 @@
                                                 </div>
                                             </div>
                                         </div>
-
-
                                         <tr>
                                             <td>{{ $schedule->patient_name }}</td>
                                             @foreach($doctors as $doctor)
@@ -162,8 +169,12 @@
                                             </td>
                                             @endif
                                             @endforeach
-                                            <td>{{ $schedule->schedule_time }}</td>
-                                            @if($schedule->approve == 0)
+                                            <td>{{ $schedule->schedule_day }}</td>
+                                            <td>
+                                                @if($schedule->schedule_time == null)
+                                                <span class="badge badge-danger">N/A</span></ @else
+                                                    {{ $schedule->schedule_time }} @endif </td>
+                                                @if($schedule->approve == 0)
                                             <td>
                                                 <span class="badge badge-secondary">pending</span>
                                             </td>

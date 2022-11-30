@@ -17,6 +17,7 @@
                                         <tr>
                                             <th>Patient Name</th>
                                             <th>Doctor Name</th>
+                                            <th>Day</th>
                                             <th>DateTime</th>
                                             <th>Status</th>
                                             <th>Meeting</th>
@@ -34,8 +35,12 @@
                                             </td>
                                             @endif
                                             @endforeach
-                                            <td>{{ $schedule->schedule_time }}</td>
-                                            @if($schedule->approve == 0)
+                                            <td>{{ $schedule->schedule_day }}</td>
+                                            <td>
+                                                @if($schedule->schedule_time == null)
+                                                <span class="badge badge-danger">N/A</span></ @else
+                                                    {{ $schedule->schedule_time }} @endif </td>
+                                                @if($schedule->approve == 0)
                                             <td>
                                                 <span class="badge badge-secondary">pending</span>
                                             </td>

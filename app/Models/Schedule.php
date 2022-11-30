@@ -20,6 +20,7 @@ class Schedule extends Model
         'patient_gender',
         'meet_link',
         'schedule_time',
+        'schedule_day',
         'approve',
     ];
 }
