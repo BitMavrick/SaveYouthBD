@@ -237,6 +237,9 @@
                 </div>
             </div>
 
+            @if($profile_data->gender and $profile_data->experties and
+            $profile_data->educational_qualification)
+
             <div class="row mt-4">
                 <div class="col-lg-12">
                     <div class="card p-4">
@@ -247,6 +250,7 @@
                                 New</button>
 
                         </div>
+
                         <div class="card-body">
                             <div class="table-responsive">
                                 <table class="table table-hover ">
@@ -343,9 +347,13 @@
                                 </table>
                             </div>
                         </div>
+
                     </div>
+
                 </div>
             </div>
+
+            @endif
 
         </section>
     </div>
