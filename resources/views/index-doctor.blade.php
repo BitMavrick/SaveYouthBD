@@ -206,15 +206,14 @@
                             </button>
                         </div>
                         <div class="modal-body">
-                            <form action="{{route('login')}}" method="POST">
+                            <form action="{{route('create.doctime')}}" method="POST">
                                 @csrf
                                 <label for="day">Select Day</label>
                                 <select required class="form-control form-group" name="day" id="day">
-                                    <option selected disabled>Select Day</option>
-                                    <option value="Seturday">Saturday</option>
+                                    <option value="Saturday">Saturday</option>
                                     <option value="Sunday">Sunday</option>
                                     <option value="Monday">Monday</option>
-                                    <option value="TuesDay">Tuesday</option>
+                                    <option value="Tuesday">Tuesday</option>
                                     <option value="Wednesday">Wednesday</option>
                                     <option value="Thursday">Thursday</option>
                                     <option value="Friday">Friday</option>
@@ -222,21 +221,18 @@
 
                                 <div class="form-group">
                                     <label for="exampleInputPassword1">From</label>
-                                    <input type="time" name="time_from" required class="form-control"
+                                    <input type="time" required name="time_from" required class="form-control"
                                         id="exampleInputPassword1" placeholder="Password">
                                 </div>
 
                                 <div class="form-group">
                                     <label for="exampleInputPassword2">To</label>
-                                    <input type="time" name="time_to" class="form-control" id="exampleInputPassword2"
-                                        placeholder="Password">
+                                    <input type="time" required name="time_to" class="form-control"
+                                        id="exampleInputPassword2" placeholder="Password">
                                 </div>
-
-
-                                <button type="submit" class="btn btn-primary">Submit</button>
+                                <button type="submit" class="btn btn-primary">Create</button>
                             </form>
                         </div>
-
                     </div>
                 </div>
             </div>
@@ -264,16 +260,19 @@
                                         </tr>
                                     </thead>
                                     <tbody>
-
+                                        @foreach($doctimes as $time)
                                         <tr>
-                                            <td>Sunday</td>
-                                            <td>10:00 AM</td>
-                                            <td>11:00 AM</td>
+
+                                            <td>{{$time->day}}</td>
+                                            <td>{{$time->time_from}}</td>
+                                            <td>{{$time->time_to}}</td>
                                             <td>
                                                 update
                                             </td>
+
                                         </tr>
 
+                                        @endforeach
                                     </tbody>
                                 </table>
                             </div>

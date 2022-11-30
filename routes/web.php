@@ -5,6 +5,7 @@ use App\Http\Controllers\GeneralController;
 use App\Http\Controllers\DoctorController;
 use App\Http\Controllers\StaffController;
 use App\Http\Controllers\PatientController;
+use App\Http\Controllers\DoctimeController;
 
 //General
 Route::get('/', [GeneralController::class, 'welcome'])->name('welcome');
@@ -37,6 +38,9 @@ Route::get('/schedule', [patientController::class, 'schedule'])->name('schedule'
 Route::get('/rehab/{id}/details', [patientController::class, 'rehab_details'])->name('rehab.details');
 Route::post('/request/booking', [patientController::class, 'request_booking'])->name('request.booking');
 Route::get('/list/request', [patientController::class, 'list_request'])->name('list.request');
+
+//Doctime
+Route::post('/create/doctime', [DoctimeController::class, 'create'])->name('create.doctime');
 
 //Authentications
 require __DIR__ . '/auth.php';

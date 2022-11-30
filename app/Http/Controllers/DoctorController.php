@@ -7,6 +7,7 @@ use Illuminate\Support\Facades\Auth;
 use App\Models\User;
 use App\Models\profile;
 use App\Models\Schedule;
+use App\Models\Doctime;
 
 use Illuminate\Http\Request;
 
@@ -20,6 +21,9 @@ class DoctorController extends Controller
 
             $schedules = Schedule::orderBy('created_at', 'desc')->get();
             view()->share('schedules', $schedules);
+
+            $doctimes = Doctime::where('doctor_id', Auth::user()->id)->get();
+            view()->share('doctimes', $doctimes);
 
             return view('index-doctor');
         } elseif (isset(Auth::user()->role) and Auth::user()->role == 'staff') {
