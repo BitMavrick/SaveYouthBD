@@ -241,7 +241,7 @@
                 <div class="col-lg-12">
                     <div class="card p-4">
                         <div class="card-title">
-                            <h4>My personal schedule </h4>
+                            <h4>My weekly schedule </h4>
                             <br>
                             <button class="btn btn-primary" data-toggle="modal" data-target="#crate-doctime">Add
                                 New</button>
@@ -262,16 +262,82 @@
                                     <tbody>
                                         @foreach($doctimes as $time)
                                         <tr>
+                                            <div class="modal fade" id="update-doctime{{$time->id}}" tabindex="-1"
+                                                role="dialog" aria-labelledby="modal-login" aria-hidden="true">
+                                                <div class="modal-dialog modal-dialog-centered" role="document">
+                                                    <div class="modal-content">
+                                                        <div class="modal-header">
+                                                            <h5 class="modal-title" id="exampleModalLongTitle">Add a new
+                                                                schedule</h5>
+                                                            <button type="button" class="close" data-dismiss="modal"
+                                                                aria-label="Close">
+                                                                <span aria-hidden="true">&times;</span>
+                                                            </button>
+                                                        </div>
+                                                        <div class="modal-body">
+                                                            <form action="{{route('update.doctime')}}" method="POST">
+                                                                @csrf
+                                                                <input type="text" name="id" hidden
+                                                                    value="{{ $time->id }}">
+                                                                <label for="day">Select Day</label>
+                                                                <select required class="form-control form-group"
+                                                                    name="day" id="day">
+                                                                    <option
+                                                                        {{ $time->day === "Saturday" ? "selected" : "" }}
+                                                                        value="Saturday">Saturday</option>
+                                                                    <option
+                                                                        {{ $time->day === "Sunday" ? "selected" : "" }}
+                                                                        value="Sunday">Sunday</option>
+                                                                    <option
+                                                                        {{ $time->day === "Monday" ? "selected" : "" }}
+                                                                        value="Monday">Monday</option>
+                                                                    <option
+                                                                        {{ $time->day === "Tuesday" ? "selected" : "" }}
+                                                                        value="Tuesday">Tuesday</option>
+                                                                    <option
+                                                                        {{ $time->day === "Wednesday" ? "selected" : "" }}
+                                                                        value="Wednesday">Wednesday</option>
+                                                                    <option
+                                                                        {{ $time->day === "Thursday" ? "selected" : "" }}
+                                                                        value="Thursday">Thursday</option>
+                                                                    <option
+                                                                        {{ $time->day === "Friday" ? "selected" : "" }}
+                                                                        value="Friday">Friday</option>
+                                                                </select>
+
+                                                                <div class="form-group">
+                                                                    <label for="exampleInputPassword1">From</label>
+                                                                    <input type="time" required name="time_from"
+                                                                        required class="form-control"
+                                                                        id="exampleInputPassword1"
+                                                                        value="{{$time->time_from}}">
+                                                                </div>
+
+                                                                <div class="form-group">
+                                                                    <label for="exampleInputPassword2">To</label>
+                                                                    <input type="time" required name="time_to"
+                                                                        class="form-control" id="exampleInputPassword2"
+                                                                        value="{{$time->time_to}}">
+                                                                </div>
+                                                                <button type="submit"
+                                                                    class="btn btn-primary">Update</button>
+                                                            </form>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
 
                                             <td>{{$time->day}}</td>
                                             <td>{{$time->time_from}}</td>
                                             <td>{{$time->time_to}}</td>
                                             <td>
-                                                update
+                                                <a href="#" data-toggle="modal"
+                                                    data-target="#update-doctime{{$time->id}}"><span
+                                                        class="badge badge-secondary"> Update </span></a>
+                                                <a href="{{ route('delete.doctime', $time->id) }}"><span
+                                                        class="badge badge-danger"> Remove </span></a>
                                             </td>
-
                                         </tr>
-
                                         @endforeach
                                     </tbody>
                                 </table>

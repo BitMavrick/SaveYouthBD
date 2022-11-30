@@ -18,7 +18,6 @@ Route::post('doc/update', [DoctorController::class, 'update'])->name('doc.update
 Route::post('doc/status', [DoctorController::class, 'status'])->name('doc.status');
 Route::post('done/meeting', [DoctorController::class, 'done_meeting'])->name('done.meeting');
 
-
 //Staff
 Route::get('staff/home', [StaffController::class, 'home'])->name('staff.home');
 Route::post('set/meeting', [StaffController::class, 'set_meeting'])->name('set.meeting');
@@ -41,6 +40,8 @@ Route::get('/list/request', [patientController::class, 'list_request'])->name('l
 
 //Doctime
 Route::post('/create/doctime', [DoctimeController::class, 'create'])->name('create.doctime');
+Route::post('/update/doctime', [DoctimeController::class, 'update'])->name('update.doctime');
+Route::get('/delete/{id}/doctime', [DoctimeController::class, 'delete'])->name('delete.doctime');
 
 //Authentications
 require __DIR__ . '/auth.php';
