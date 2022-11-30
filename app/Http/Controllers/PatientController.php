@@ -10,6 +10,7 @@ use App\Models\Profile;
 use App\Models\Schedule;
 use App\Models\Rehab;
 use App\Models\Request as pickup;
+use App\Models\Doctime;
 
 class PatientController extends Controller
 {
@@ -40,6 +41,9 @@ class PatientController extends Controller
         $profile = profile::where('id', $id)->first();
         $user = User::where('id', $id)->first();
 
+        $doctimes = Doctime::where('doctor_id', $id)->get();
+
+        view()->share('doctimes', $doctimes);
         View()->share('profile_data', $profile);
         View()->share('user', $user);
 

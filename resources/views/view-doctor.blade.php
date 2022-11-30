@@ -162,6 +162,44 @@
                         </div>
                     </div>
                 </div>
+
+                <div class="row mt-4">
+                    <div class="col-lg-12">
+                        <div class="card p-4">
+                            <div class="card-title">
+                                <h4>Weekly schedule </h4>
+                            </div>
+
+                            <div class="card-body">
+                                <div class="table-responsive">
+                                    <table class="table table-hover ">
+                                        <thead>
+                                            <tr>
+                                                <th>Day</th>
+                                                <th>From</th>
+                                                <th>To</th>
+
+
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            @foreach($doctimes as $time)
+                                            <tr>
+                                                <td>{{$time->day}}</td>
+                                                <td>{{$time->time_from}}</td>
+                                                <td>{{$time->time_to}}</td>
+
+                                            </tr>
+                                            @endforeach
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+
+                        </div>
+
+                    </div>
+                </div>
             </div>
         </section>
     </div>
