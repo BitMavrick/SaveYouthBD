@@ -195,11 +195,60 @@
             </div>
             @endif
 
+            <div class="modal fade" id="crate-doctime" tabindex="-1" role="dialog" aria-labelledby="modal-login"
+                aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLongTitle">Add a new schedule</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <form action="{{route('login')}}" method="POST">
+                                @csrf
+                                <label for="day">Select Day</label>
+                                <select required class="form-control form-group" name="day" id="day">
+                                    <option selected disabled>Select Day</option>
+                                    <option value="Seturday">Saturday</option>
+                                    <option value="Sunday">Sunday</option>
+                                    <option value="Monday">Monday</option>
+                                    <option value="TuesDay">Tuesday</option>
+                                    <option value="Wednesday">Wednesday</option>
+                                    <option value="Thursday">Thursday</option>
+                                    <option value="Friday">Friday</option>
+                                </select>
+
+                                <div class="form-group">
+                                    <label for="exampleInputPassword1">From</label>
+                                    <input type="time" name="time_from" required class="form-control"
+                                        id="exampleInputPassword1" placeholder="Password">
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="exampleInputPassword2">To</label>
+                                    <input type="time" name="time_to" class="form-control" id="exampleInputPassword2"
+                                        placeholder="Password">
+                                </div>
+
+
+                                <button type="submit" class="btn btn-primary">Submit</button>
+                            </form>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
             <div class="row mt-4">
                 <div class="col-lg-12">
                     <div class="card p-4">
                         <div class="card-title">
-                            <h4>Upcoming Schedule </h4>
+                            <h4>My personal schedule </h4>
+                            <br>
+                            <button class="btn btn-primary" data-toggle="modal" data-target="#crate-doctime">Add
+                                New</button>
 
                         </div>
                         <div class="card-body">
@@ -207,28 +256,23 @@
                                 <table class="table table-hover ">
                                     <thead>
                                         <tr>
-                                            <th>Subject</th>
-                                            <th>Patient Name</th>
-                                            <th>Age</th>
-                                            <th>DateTime</th>
-                                            <th>Meeting</th>
+                                            <th>Day</th>
+                                            <th>From</th>
+                                            <th>To</th>
+                                            <th>Action</th>
+
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        @foreach($schedules as $schedule)
-                                        @if($schedule->doctor_id == Auth::user()->id and $schedule->approve == 1)
+
                                         <tr>
-                                            <td>{{ $schedule->subject }}</td>
+                                            <td>Sunday</td>
+                                            <td>10:00 AM</td>
+                                            <td>11:00 AM</td>
                                             <td>
-                                                {{ $schedule->patient_name }}
+                                                update
                                             </td>
-                                            <td>{{ $schedule->patient_age }}</td>
-                                            <td>{{ $schedule->schedule_time }}</td>
-                                            <td><a href="{{ $schedule->meet_link }}"> <span
-                                                        class="badge badge-success">Join Now</span></td>
                                         </tr>
-                                        @endif
-                                        @endforeach
 
                                     </tbody>
                                 </table>
